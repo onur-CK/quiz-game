@@ -1,3 +1,4 @@
+/* Center content both horizontally and vertically */
 body, html {
   background-color: white;
   margin: 0;
@@ -7,9 +8,17 @@ body, html {
   height: 100%;
 }
 
+/* Main content window stylings */
 .main-window {
   text-align: center;
+  background-color: lightblue;
+  padding: 20px;
+  border: 1px solid red;
+  border-radius: 5px;
+  max-width: 400px;
+  /* Use flexbox for the layout */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
+  align-items: center; 
 }
+
