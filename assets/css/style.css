@@ -43,3 +43,15 @@ input {
   margin: 10px 0;
 }
 
+.game-rules {
+  /* Rules window stlings */
+  display: none;
+  font-family: Arial;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-rules h2 {
+  margin-bottom: 20px;
+}
+
