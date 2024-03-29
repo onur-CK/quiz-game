@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(rulesDiv.style.display === 'none') {
       rulesDiv.style.display = 'block'; 
     } else {
-      rulessDiv.style.display = 'none';
+      rulesDiv.style.display = 'none';
     }
     
   });

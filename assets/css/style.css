@@ -44,10 +44,10 @@ input {
 }
 
 .game-rules {
-  /* Rules window stlings */
+  /* Rules window stylings */
   display: none;
   font-family: Arial;
-  text-align: center;
+  text-align: left;
   padding: 20px;
 }
 
