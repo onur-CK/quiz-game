@@ -1,3 +1,6 @@
+
+
+
 // Wait for the DOM content to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Quickz rules button

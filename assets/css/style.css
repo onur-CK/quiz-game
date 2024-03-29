@@ -29,7 +29,8 @@ h1 {
 }
 
 .lets-go-btn,
-.quiz-rules-btn {
+.quiz-rules-btn,
+.submit-btn {
   background-color: lightpink;
   padding: 10px 20px;
   color: red;
@@ -37,6 +38,7 @@ h1 {
   cursor: pointer;
   margin-top:10px;
 }
+
 
 input {
   padding: 10px;
