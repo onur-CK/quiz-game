@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="General quiz game.">
+  <meta name="keywords" content="quiz, history, technology, general knowledge, geography">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Quickz</title>
+  
 </head>
 <body>
-  <!-- Main content section for quickz -->
-  <div class="main-window">
+  <!-- Main content section(game area) for quickz -->
+  <div class="game-area">
     <h1>QUICKZ</h1>
-  <!-- Quickz Indtroduction -->
+  
+      <!-- Question area -->
+      <div id="question-container">
+        <div id="questions-area">Questions</div>
+      </div>
+  
+      <!-- Rules and submit area-->
+      
+
+    <!-- Quickz Indtroduction -->
   <p>
     Would you like to take test your knowledge? Take this quiz to find out!
   </p>
+  
+  
   <!-- Button for viewing quickz rules -->
-  <button onclick="" id="rules-btn" class="quiz-rules-btn">
+  <button onclick="" id="rules-btn" class="quickz-rules-btn">
     See the rules ?
   </button>
-  <!-- Input field for username -->
-  <p>Enter your name here</p>
-  <input type="text" id="user-name-input">
-  
-  <!-- Submit button -->
-  <button type="button" id="submit" class="submit-btn">Submit!</button>
-  <!-- Button to start the quickz -->
-  <button id="start-btn" class="lets-go-btn">Let's Go!!!</button>
 
+  
   <!-- Quickz rules(hidden by default)-->
   <div id="quickz-rules" class="game-rules" style="display: none;">
     <h2>Quickz rules</h2>
@@ -38,7 +45,25 @@
       5- Answer all 10 questions to finish the Quickz. <br>
     </p>
   </div>  
+
+  
+  
+  <!-- Input field for username -->
+  <input type="text" placeholder="Username" id="user-name-input" class="user-name">
+  
+  
+  
+  <!-- Submit button -->
+  <button type="button" id="submit" class="submit-btn">Submit!</button>
+  
+  
+  
+  <!-- Button to start the quickz -->
+  <button id="start-btn" class="lets-go-btn">Let's Go!!!</button>
+
+  
 </div>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/questions.js"></script>
 </body>
 </html>
