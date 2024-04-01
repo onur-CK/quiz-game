@@ -3,7 +3,7 @@ document.addEvenetListener('DOMContentLoaded', function () {
 });
 
 //variables
-const letsGo = document.getElementById('start-btn');
+const startBtn = document.getElementById('start-btn');
 const nextBtn =  document.getElementById('next-btn');
 const restartBtn =  document.getElementById('restart-btn');
 const timerShow =  document.getElementById('timer-btn');
@@ -23,12 +23,6 @@ let userName = document.getElementById('userName');
 const form = document.getElementById('form');
 let resultText = document.getElementById('result-score-text');
 let scoreText = document.getElementById('score-text');
-const letsGo = document.getElementById('start-btn');
-const letsGo = document.getElementById('start-btn');
-const letsGo = document.getElementById('start-btn');
-const letsGo = document.getElementById('start-btn');
-const letsGo = document.getElementById('start-btn');
-const letsGo = document.getElementById('start-btn');
 let randomQuestions; //random question holder
 let currentQuestion; 
 let answeredQuestions = false;
@@ -37,6 +31,13 @@ var sec = 20000;
 var clicks = 0;
 var time = setInterval(myTimer, 1200);
 
+//event listeners for submit, next, rules and start buttons.
+startBtn.addEventListener('click', runGame);
+submit.addEventListener('click', playerName);
+nextBtn.addEventListener('click', nextQuestion);
+quickzRules.addEventListener('click', showRules);
 
-
-
+function runGame() {}
+function playerName() {}
+function nextQuestion () {}
+function showRules ()
