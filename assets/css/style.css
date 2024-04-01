@@ -47,17 +47,3 @@ input {
   padding: 10px;
   margin-bottom: 10px 0;
 }
-
-.game-rules {
-  /* Rules window stylings */
-  display: none;
-  font-family: Arial;
-  text-align: left;
-  padding: 20px;
-}
-
-.game-rules h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
