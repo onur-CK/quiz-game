@@ -88,10 +88,13 @@ h1 {
 .score-area {
   margin: 0 auto;
   width: 50%;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.corrects {
+.corresct {
   color: green;
   font-weight: bold;
 }
@@ -101,9 +104,27 @@ h1 {
   font-weight: bold;
 }
 
+.correct-scores-btn,
+.incorrect-scores-btn,
+.timer-btn,
+.question-counter-btn {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 14px 20px;
+  background-color: white;
+  width: calc(33.33% - 4px); 
+  border-radius: 6px;
+  border: 2px solid black;
+  box-sizing: border-box; 
+  margin: 0 2px; 
+}
+
+
+
+/*
 .correct-scores-btn {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 18px;
   background-color: white;
   width: 50%;
@@ -113,13 +134,26 @@ h1 {
 
 .incorrect-scores-btn {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 18px;
   background-color: white;
   width: 50%;
   border-radius: 6px;
   border: 2px solid black;
 }
+
+.timer-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  padding: 18px;
+  background-color: white;
+  width: 50%;
+  border-radius: 6px;
+  border: 2px solid black;
+}
+
+*/
+
 
 /*
 .h2 {
