@@ -133,6 +133,16 @@ h1 {
   align-items: center;
 }
 
+button {
+  font-size: 1.3rem;
+  background-color: white;
+  margin: 6px;
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
 .quickz-section {
   display: flex;
   flex-direction: column;
