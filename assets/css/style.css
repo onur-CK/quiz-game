@@ -156,7 +156,13 @@ button:hover {
 }
 
 .hide {
+  display: none;
+}
 
+.start-btn,
+.next-btn {
+  width: 25%;
+  margin: 12px 1;
 }
 
 .quickz-section {
@@ -167,6 +173,28 @@ button:hover {
   gap: 14px;
   margin: 6px auto;
 }
+
+@keyframes glowing {
+  0% {
+    background-color: #8eb6eb;
+    box-shadow: 0 0 4px #8eb6eb;
+  }
+
+  50% {
+    background-color: #c1c5c0;
+  }
+
+  100% {
+    background-color: #8eb6eb;
+    box-shadow: 0 0 4px #8eb6eb;
+  }
+
+}
+
+#quickz-rules {
+  animation: glowing 1200ms infinite;
+}
+
 
 
 /*
