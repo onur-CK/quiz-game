@@ -18,20 +18,32 @@
       <div id="question-container">
         <div id="questions-area">Questions</div>
       </div>
+      
+      
       <!-- Rules and submit area-->
       <div class="quickz-section btn-flex">
         <p id="introduction">
-          Would you like to test your knowledge? <br> Take this quiz to find out!
+          Would you like to test your knowledge? <br> Take this quickz to find out!
         </p>
+        <!-- The quickz interface, button to display the quickz rules, and a form to collect the user's name to start the quickz -->
+        <button id="quickz-rules" class="btn">Rules</button>
+        <form id="form">
+          <label id="usernameLabel">Username ?</label>
+          <input type="text" id="userName" name="uname">
+          <button type="button" id="submit" class="btn">Submit</button>
+        </form>
       </div>
+      
+      
       <!-- Button for viewing quickz rules -->
       <button onclick="" id="rules-btn" class="quickz-rules-btn">
         See the rules ?
       </button>
 
   
-  <!-- Quickz rules(hidden by default)-->
-  <div id="quickz-rules" class="game-rules" style="display: none;">
+  
+      <!-- Quickz rules(hidden by default)-->
+  <div id="quickz-rules-text" class="game-rules" style="display: none;">
     <h2>Quickz rules</h2>
     <p>
       1- Enter your name and press "Let's Go" to begin. <br>
@@ -42,6 +54,7 @@
     </p>
   </div>  
 
+  
   <!-- Answer area -->
   <div class="answer-options btn">
     <p id="score-text" class="hide"></p>
@@ -52,6 +65,7 @@
   </div>
   
   <!-- Input field for username -->
+  <div class="input-navigation"></div>
   <input type="text" placeholder="Username" id="user-name-input" class="user-name">
   
   
