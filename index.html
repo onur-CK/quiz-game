@@ -22,14 +22,14 @@
       
       <!-- Rules and submit area-->
       <div class="quickz-section btn-flex">
-        <p id="introduction">
+        <p id="introduction" class="introduction">
           Would you like to test your knowledge? <br> Take this quickz to find out!
         </p>
         <!-- The quickz interface, button to display the quickz rules, and a form to collect the user's name to start the quickz -->
         <button id="quickz-rules" class="btn">Rules</button>
         <form id="form">
-          <label id="usernameLabel">Username ?</label>
-          <input type="text" id="userName" name="uname">
+          <label id="usernameLabel" class="usernameLabel">Username ?</label>
+          <input type="text" id="userName" class="userName" name="uname">
           <button type="button" id="submit" class="btn">Submit</button>
         </form>
       </div>
@@ -47,7 +47,7 @@
         </p>
       <button id="close-btn" class="btn">Close</button>
       </div>  
-      <p id="result-score-text" class="hide"></p>
+      <p id="result-score-text" class="result-score-text hide"></p>
   
       
       <!-- Answer area -->
@@ -68,10 +68,10 @@
 
       <!-- Score area -->
       <div class="score-area">
-        <p class="correct-scores-btn hide" id="correct-scores-btn">Correct Answers: <span id="corrects">0</span></p>
-        <p class="incorrect-scores-btn hide" id="incorrect-scores-btn">Incorrect Answers: <span id="incorrects">0</span></p>
+        <p class="correct-scores-btn hide" id="correct-scores-btn">Correct Answers: <span id="corrects" class="corrects">0</span></p>
+        <p class="incorrect-scores-btn hide" id="incorrect-scores-btn">Incorrect Answers: <span id="incorrects" class="incorrects">0</span></p>
         <button id="timer-btn" class="timer-btn hide">You have <span id="timer"></span>s to answer</button>
-        <button id="question-counter-btn" class="question-counter-btn hide">Question <span id="question-counter">0</span></button>
+        <button id="question-counter-btn" class="question-counter-btn hide">Question <span id="question-counter" class="question-counter">0</span></button>
       </div>
   
       

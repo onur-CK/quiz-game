@@ -72,10 +72,28 @@ h1 {
   border-radius: 4px;
 }
 
+.introduction,
+.usernameLabel {
+  font-size: 18px;
+}
 
+.userName {
+  font-size: 1.5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 14px;
+  text-align: center;
+}
 
+.corrects {
+  color: green;
+  font-weight: bold;
+}
 
-
+.incorrects {
+  color: red;
+  font-weight: bold;
+}
 
 
 
