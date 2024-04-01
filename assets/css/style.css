@@ -27,18 +27,22 @@ body{
 }
 */
 
-/* Main content window stylings */
+/* Game area stylings */
 .game-area {
   text-align: center;
+  box-sizing: border-box;
+  width: 80%;
   background-color: lightblue;
-  padding: 20px;
+  padding: 1%;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid red;
-  border-radius: 5px;
-  max-width: 400px;
-  /* Use flexbox for the layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  border-radius: 50px;
+  max-width: 500px;
+  
+/* Use flexbox for the layout */
+  
+ 
 }
 
 .lets-go-btn,
