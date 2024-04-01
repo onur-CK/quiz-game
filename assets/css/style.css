@@ -85,6 +85,12 @@ h1 {
   text-align: center;
 }
 
+.score-area {
+  margin: 0 auto;
+  width: 50%;
+  font-size: 1.3rem;
+}
+
 .corrects {
   color: green;
   font-weight: bold;
