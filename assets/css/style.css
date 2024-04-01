@@ -30,6 +30,17 @@ h1 {
   max-width: 500px;
 }
 
+.game-area1 {
+  box-sizing: border-box;
+  width: 80%;
+  background-color: white; 
+  padding: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  max-width: 500px;
+}
+
 .quickz-rules-info {
   text-align: left;
   font-size: 16px;
@@ -199,6 +210,10 @@ button:hover {
   margin-top: 22px;
 }
 
+.input-nav-restart {
+  font-size: 30px;
+  margin-top: 50px;
+}
 
 /*
 .correct-scores-btn {
