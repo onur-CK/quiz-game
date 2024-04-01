@@ -143,6 +143,22 @@ button {
   padding: 10px;
 }
 
+button:hover {
+  background-color: lightpink;
+}
+
+.correct-scores-btn {
+  background-color: green;
+}
+
+.incorrect-scores-btn {
+  background-color: red;
+}
+
+.hide {
+
+}
+
 .quickz-section {
   display: flex;
   flex-direction: column;
