@@ -25,6 +25,7 @@
         <p id="introduction" class="introduction">
           Would you like to test your knowledge? <br> Take this quickz to find out!
         </p>
+        
         <!-- The quickz interface, button to display the quickz rules, and a form to collect the user's name to start the quickz -->
         <button id="quickz-rules" class="btn">Rules</button>
         <form id="form">
@@ -32,9 +33,7 @@
           <input type="text" id="userName" class="userName" name="uname">
           <button type="button" id="submit" class="btn">Submit</button>
         </form>
-      </div>
-      
-      
+     
       <!-- Quickz rules -->
       <div id="quickz-rules-info" class="quickz-rules-info hide">
         <h2>Quickz rules</h2>
@@ -48,10 +47,10 @@
       <button id="close-btn" class="btn">Close</button>
       </div>  
       <p id="result-score-text" class="result-score-text hide"></p>
-  
+      </div>
       
       <!-- Answer area -->
-      <div class="answer-options btn">
+      <div id="answer-options" class="answer-options btn">
         <p id="score-text" class="score-text hide"></p>
         <button class="btn hide"></button>
         <button class="btn hide"></button>
@@ -61,7 +60,7 @@
 
       <!-- Input area -->
       <div class="input-nav">
-        <button id="start-btn" class="start-btn hide">Start</button>
+        <button id="start-btn" class="start-btn hide">Lets Go</button>
         <button id="next-btn" class="next-btn hide">Next</button>
         <button id="restart-btn" class="restart-button hide">Restart</button>
       </div>
