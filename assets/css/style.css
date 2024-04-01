@@ -195,6 +195,18 @@ button:hover {
   animation: glowing 1200ms infinite;
 }
 
+.ooops {
+  background-color: white;
+  font-size: xx-large;
+  max-width: 850px;
+  width: 80%;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 25px 0;
+  margin: auto;
+  margin-top: 22px;
+}
 
 
 /*
