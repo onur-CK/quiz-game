@@ -16,7 +16,7 @@ const quickzRulesDiv = document.getElementById('quickz-rules-info');
 const introductionMain = document.getElementById('introduction');
 const questionCont = document.getElementById('questions-container');
 const questionArea = document.getElementById('questions-area');
-const answersArea = document.getElementById('answer-options')[0];
+const answersArea = document.getElementsByClassName('answer-options')[0];
 const closeBtn = document.getElementById('close-btn');
 let submit = document.getElementById('submit');
 let userNameLabel = document.getElementById('usernameLabel');
@@ -28,7 +28,7 @@ let randomQuestions; //random question holder
 let currentQuestion; 
 let answeredQuestions = false;
 let score = 0;
-var sec = 20000; 
+var sec = 20000; //time for starting the quiz
 var clicks = 0;
 var time = setInterval(qTimer, 1200);
 
@@ -37,6 +37,8 @@ startBtn.addEventListener('click', runGame);
 submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextQuestion);
 quickzRules.addEventListener('click', showRules);
+closeBtn.addEventListener('click', reset);
+
 
 //function for displaying the rules of the quickz.
 function showRules () {
@@ -46,13 +48,56 @@ function showRules () {
   quickzRulesDiv.classList.remove('hide');
   submit.classList.remove('hide');
   userName.classList.remove('hide');
-  closeBtn.addEventListener('click', reset);
+} 
+
+
+function reset () {
+  quickzRules.classList.remove('hide');
+  resultText.classList.add('hide');
+  quickzRulesDiv.classList.add('hide');
+  form.classList.remove('hide');
+  submit.classList.remove('hide');
+  userNameLabel.classList.remove('hide');
+  introductionMain.classList.remove('hide');
 }
 
 
+/*
+function qTimer() {
+  document.getElementById('timerShow').innerHTML = sec;
+  sec--;
+  if (sec < -1) {
+    clearInterval(time);
+    timeOut();
+  }
+}
+*/
 
+function runGame () {
+  startBtn.classList.add('hide');
+  sec = 30;
+  quickzRules.classList.add('hide');
+  resultText.classList.add('hide');
+  quickzRulesDiv.classList.add('hide');
+  form.classList.add('hide');
+  submit.classList.add('hide');
+  userNameLabel.classList.add('hide');
+  introductionMain.classList.add('hide');
+  timerShow.classList.remove('hide');
+  correctsShow.classList.remove('hide');
+  incorrectsShow.classList.remove('hide');
+  qCounterShow.classList.remove('hide');
+  randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0,10); //stores and selects 10 random questions
+  currentQuestion = 0;
+  clicks += 1; //increments q counter 
+  document.getElementById('clicks').innerHTML = clicks;
+  questionCont.classList.remove('hide');
+  nextQuestion();
+}
 
 function qTimer() {}
 function runGame() {}
 function playerName() {}
 function nextQuestion () {}
+function reset () {} 
+function timeOut () {}
