@@ -62,7 +62,7 @@ function reset () {
 }
 
 
-/*
+
 function qTimer() {
   document.getElementById('timerShow').innerHTML = sec;
   sec--;
@@ -71,7 +71,6 @@ function qTimer() {
     timeOut();
   }
 }
-*/
 
 function runGame () {
   startBtn.classList.add('hide');
@@ -95,9 +94,33 @@ function runGame () {
   nextQuestion();
 }
 
-function qTimer() {}
-function runGame() {}
-function playerName() {}
+//gets the questions and answers to display
+function displayQuestion(question) {
+  questionArea.innerText = questions.question;
+  question.answers.forEach((answer) => {
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    button.classList.add('btn');
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEvenetListener('click', checkAnswer);
+    answersArea.appendChild(button);
+  });
+}
+
+//enter username and display in result
+function playerName() {
+  const enteredUserName = document.getElementById('userName').value;
+  if (enteredUserName) {
+    userName = enteredUserName;
+    startBtn.classList.remove('hide');
+    submit.classList.add('hide');
+    scoreText.classList.add('hide');
+    closeBtn.addEvenetListener('click', reset);
+  }
+}
+
+
 function nextQuestion () {}
-function reset () {} 
 function timeOut () {}
