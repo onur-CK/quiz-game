@@ -30,10 +30,13 @@ let answeredQuestions = false;
 let score = 0;
 var sec = 20000; //time for starting the quiz
 var clicks = 0;
-var time = setInterval(qTimer, 1200);
+
 
 //event listeners for submit, next, rules and start buttons.
 startBtn.addEventListener('click', runGame);
+/*submit.addEventListener('click', function () {
+  playerName();
+});*/
 submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextCurrentQuestion);
 quickzRules.addEventListener('click', showRules);
@@ -48,6 +51,7 @@ function showRules () {
   quickzRulesDiv.classList.remove('hide');
   submit.classList.remove('hide');
   userName.classList.remove('hide');
+  
 } 
 
 
@@ -79,11 +83,13 @@ function playerName() {
     submit.classList.add('hide');
     scoreText.classList.add('hide');
     closeBtn.addEventListener('click', reset);
-  } else {
+    runGame();
+    } else {
     scoreText.classList.remove('hide');
-    document.getElementById('rule-text-score').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
+    document.getElementById('score-text').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
   }
 }
+
 
 function nextCurrentQuestion() {
   if (answeredQuestions) {
@@ -96,6 +102,7 @@ function nextCurrentQuestion() {
   clicks += 1; // increments number of completed questions
   document.getElementById('question-counter').innerHTML = clicks; 
 }
+
 
 function runGame () {
   startBtn.classList.add('hide');
@@ -113,8 +120,9 @@ function runGame () {
   qCounterShow.classList.remove('hide');
   randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0,10); //stores and selects 10 random questions
   currentQuestion = 0;
+  
   clicks += 1; //increments q counter 
-  document.getElementById('clicks').innerHTML = clicks;
+  document.getElementById('question-counter').innerHTML = clicks;
   questionCont.classList.remove('hide');
   getToNextQuestion();
 }
@@ -122,6 +130,7 @@ function runGame () {
 function getToNextQuestion() {
   defaultState();
   displayQuestion(randomQuestions[currentQuestion]);
+ 
 }
 
 //gets the questions and answers to display
@@ -154,4 +163,5 @@ function defaultState() {
 
 
 
-function timeOut () {}
+
+
