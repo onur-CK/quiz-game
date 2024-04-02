@@ -55,7 +55,14 @@ function showRules () {
 } 
 
 
-
+function qTimer() {
+  document.getElementById('timer').innerHTML = sec;
+  sec--;
+  if (sec < -1) {
+    clearInterval(time);
+    timeOut();
+  }
+}
 
 
 function reset () {
@@ -148,51 +155,6 @@ function defaultState() {
   }
 }
 
-/*
-function updateScore(isCorrect) {
-  if (isCorrect) {
-    score++;
-    document.getElementById('corrects').innerText = score;
-  }
-}
-*/
-
-
-
-
-
-
-
-
-/*
-function checkAnswer(event) {
-  const selectedButton = event.target;
-  const correct = selectedButton.dataset.correct;
-
-  if (correct) {
-    selectedButton.classList.add('correct');
-    updateScore(true);
-  } else {
-    selectedButton.classList.add('incorrect');
-    updateScore(false);
-  }
-
-  Array.form(answersArea.children).forEach(button => {
-    if (button.dataset.correct) {
-      button.classList.add('correct');
-    }
-    button.removeEventListener('click', checkAnswer);
-  });
-
-  answeredQuestion = true;
-  clearInterval(time);
-  nextBtn.classList.remove('hide');
-}
-*/
-
-
-
-
 // Declare timerInterval globally
 let timerInterval;
 
@@ -221,30 +183,28 @@ function checkAnswer(event) {
   const selectedButton = event.target;
   const correct = selectedButton.dataset.correct;
 
-  if (correct) {
-    selectedButton.classList.add('correct');
-    updateScore(true);
-  } else {
-    selectedButton.classList.add('incorrect');
-    updateScore(false);
-    // Highlight the correct answer in green
-    const correctButton = Array.from(answersArea.children).find(button => button.dataset.correct === 'true');
-    correctButton.classList.add('correct');
+  if (!selectedButton.classList.contains('answered')) {
+    selectedButton.classList.add('answered'); // Add a class to mark this button as answered
+
+    if (correct) {
+      selectedButton.classList.add('correct');
+      updateScore(true);
+    } else {
+      selectedButton.classList.add('incorrect');
+      // Highlight the correct answer in green
+      const correctButton = Array.from(answersArea.children).find(button => button.dataset.correct === 'true');
+      correctButton.classList.add('correct');
+      updateScore(false);
+    }
+
+    Array.from(answersArea.children).forEach(button => {
+      button.removeEventListener('click', checkAnswer); // Remove the event listener to prevent further clicks
+    });
+
+    answeredQuestions = true;
+    clearInterval(timerInterval);
+    nextBtn.classList.remove('hide');
   }
-
-  // Disable all buttons to prevent further clicks
-  Array.from(answersArea.children).forEach(button => {
-    button.removeEventListener('click', checkAnswer);
-  });
-
-  // Set answeredQuestions to true to indicate that the question has been answered
-  answeredQuestions = true;
-
-  // Stop the timer
-  clearInterval(timerInterval);
-
-  // Show the next button
-  nextBtn.classList.remove('hide');
 }
 
 // Function to update the score
@@ -258,3 +218,27 @@ function updateScore(isCorrect) {
     document.getElementById('incorrects').innerText = incorrectScore + 1;
   }
 }
+
+// Function to handle the time-out scenario
+function timeOut() {
+  timerShow.textContent = 'Time\'s up!';
+  document.getElementById('questions-area').innerHTML = 'Try faster next time! <br> Click to try again.';
+  document.getElementById('questions-area').addEventListener('click', runGame); // Allow the user to restart the game by clicking the message
+}
+
+// Add event listener to start button
+startBtn.addEventListener('click', runGame);
+
+// Add event listener to submit button
+submit.addEventListener('click', playerName);
+
+// Add event listener to next button
+nextBtn.addEventListener('click', nextCurrentQuestion);
+
+// Add event listener to rules button
+quickzRules.addEventListener('click', showRules);
+
+// Add event listener to close button
+closeBtn.addEventListener('click', reset);
+
+
