@@ -60,7 +60,7 @@ function qTimer() {
   sec--;
   if (sec < -1) {
     clearInterval(time);
-    timeOut();
+    timeOutEndOfTheGame();
   }
 }
 
@@ -161,7 +161,7 @@ function checkAnswer(event) {
 
   if(!clickedButton.classList.contains('answered')) {
     clickedButton.classList.add('answered');
-    
+  }  
     if (correct) score++;
 
     clearInterval(time); //stops the timer
@@ -177,9 +177,9 @@ function checkAnswer(event) {
     } else {
       sec = 30;
       timerShow.classList.add('hide');
-      setTimeOut(endScore, 3000);
+      setTimeout(endScore, 3000);
 
-      function endscore() {
+      function endScore() {
         incorrectsShow.classList.add('hide');
         correctsShow.classList.add('hide');
         answersArea.classList.add('hide');
@@ -202,11 +202,28 @@ function checkAnswer(event) {
     }
   }
   if (correct) {
-    ();
+    incrementCorrectAnswer();
   } else {
-    
+    incrementWrongAnswer();
   }
 }
+
+
+function timeOutEndOfTheGame() {
+  document.getElementById('questions-area').innerHTML = 
+  `<strong><em>Unfortunately, time is up!,</em></strong> <br>`;
+  timerShow.classList.add('hide');
+  answersArea.classList.add('hide');
+  correctsShow.classList.add('hide');
+  incorrectsShow.classList.add('hide');
+  qCounterShow.classList.add('hide');
+  quickzRules.classList.add('hide');
+  introductionMain.classList.add('hide');
+  form.classList.add('hide');
+  resultText.classList.add('hide');
+  setTimeout(restart, 7000);
+}
+
 
 function restart() {
   return window.location.assign('end-of-timer.html');
@@ -215,6 +232,10 @@ function restart() {
 function gameOver() {
   return window.location.assign('result.html');
 }
+
+
+
+
 
 function incrementCorrectAnswer() {
   let oldScore = parseInt(document.getElementById('corrects').innerText);
@@ -225,99 +246,3 @@ function incrementWrongAnswer() {
   let oldScore = parseInt(document.getElementById('incorrects').innerText);
   document.getElementById('incorrects').innerText = oldScore + 1;
 }
-
-
-
-/*
-
-// Declare timerInterval globally
-let timerInterval;
-
-// Function to start the timer for each question
-function startTimer() {
-  let secondsLeft = 30; // Set the initial time to 30 seconds
-
-  // Update the timer display every second
-  timerShow.textContent = secondsLeft;
-
-  // Update the timer interval every second
-  timerInterval = setInterval(() => {
-    secondsLeft--;
-    timerShow.textContent = secondsLeft;
-
-    // If the timer reaches 0, call the timeOut function
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-      timeOut();
-    }
-  }, 1000);
-}
-
-
-// Function to check the selected answer
-function checkAnswer(event) {
-  const selectedButton = event.target;
-  const correct = selectedButton.dataset.correct;
-
-  if (!selectedButton.classList.contains('answered')) {
-    selectedButton.classList.add('answered'); // Add a class to mark this button as answered
-
-    if (correct) {
-      selectedButton.classList.add('correct');
-      updateScore(true);
-    } else {
-      selectedButton.classList.add('incorrect');
-      // Highlight the correct answer in green
-      const correctButton = Array.from(answersArea.children).find(button => button.dataset.correct === 'true');
-      correctButton.classList.add('correct');
-      updateScore(false);
-    }
-
-    Array.from(answersArea.children).forEach(button => {
-      button.removeEventListener('click', checkAnswer); // Remove the event listener to prevent further clicks
-    });
-
-    answeredQuestions = true;
-    clearInterval(timerInterval);
-    nextBtn.classList.remove('hide');
-  }
-}
-
-
-
-
-
-// Function to update the score
-function updateScore(isCorrect) {
-  if (isCorrect) {
-    score++;
-    document.getElementById('corrects').innerText = score;
-  } else {
-    // Increase the incorrect score if the answer is wrong
-    const incorrectScore = parseInt(document.getElementById('incorrects').innerText);
-    document.getElementById('incorrects').innerText = incorrectScore + 1;
-  }
-}
-
-// Function to handle the time-out scenario
-function timeOut() {
-  timerShow.textContent = 'Time\'s up!';
-  document.getElementById('questions-area').innerHTML = 'Try faster next time! <br> Click here to try again.';
-  document.getElementById('questions-area').addEventListener('click', runGame); // Allow the user to restart the game by clicking the message
-}
-
-// Add event listener to start button
-startBtn.addEventListener('click', runGame);
-
-// Add event listener to submit button
-submit.addEventListener('click', playerName);
-
-// Add event listener to next button
-nextBtn.addEventListener('click', nextCurrentQuestion);
-
-// Add event listener to rules button
-quickzRules.addEventListener('click', showRules);
-
-// Add event listener to close button
-closeBtn.addEventListener('click', reset);
-*/
