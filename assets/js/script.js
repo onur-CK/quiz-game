@@ -96,7 +96,7 @@ function runGame () {
 
 //gets the questions and answers to display
 function displayQuestion(question) {
-  questionArea.innerText = questions.question;
+  questionArea.innerText = question.question;
   question.answers.forEach((answer) => {
     const button = document.createElement('button');
     button.innerText = answer.text;
@@ -104,7 +104,7 @@ function displayQuestion(question) {
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
-    button.addEvenetListener('click', checkAnswer);
+    button.addEventListener('click', checkAnswer);
     answersArea.appendChild(button);
   });
 }
@@ -117,7 +117,7 @@ function playerName() {
     startBtn.classList.remove('hide');
     submit.classList.add('hide');
     scoreText.classList.add('hide');
-    closeBtn.addEvenetListener('click', reset);
+    closeBtn.addEventListener('click', reset);
   } else {
     scoreText.classList.remove('hide');
     document.getElementById('rule-text-score').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
