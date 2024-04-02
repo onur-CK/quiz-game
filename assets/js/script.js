@@ -30,13 +30,11 @@ let questionAnswered = false;
 let score = 0;
 var sec = 20000; //time for starting the quiz
 var clicks = 0;
+var time = setInterval(qTimer, 1000);
 
 
 //event listeners for submit, next, rules and start buttons.
 startBtn.addEventListener('click', runGame);
-/*submit.addEventListener('click', function () {
-  playerName();
-});*/
 submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextCurrentQuestion);
 quickzRules.addEventListener('click', showRules);
@@ -54,7 +52,6 @@ function showRules () {
   
 } 
 
-
 function qTimer() {
   document.getElementById('timer-btn').innerHTML = `You have ${sec}s seconds to answer.`;
   sec--;
@@ -63,7 +60,6 @@ function qTimer() {
     timeOutEndOfTheGame();
   }
 }
-
 
 function reset () {
   quickzRules.classList.remove('hide');
@@ -165,7 +161,8 @@ function checkAnswer(event) {
     if (correct) score++;
 
     clearInterval(time); //stops the timer
-    questionAnswered: true;
+    questionAnswered = true;
+    console.log(questionAnswered);
 
     setStatusClass(document.body, correct);
     Array.from(answersArea.children).forEach((button) => {
@@ -190,15 +187,15 @@ function checkAnswer(event) {
         restartBtn.classList.add('hide');
 
         if (score >= 8) {
-          document.getElementById('result-score-text').innerHTML = 'Awesome!! ${userName}. Your score is ${score} out of 10.';
+          document.getElementById('result-score-text').innerHTML = `Awesome!! ${userName}. Your score is ${score} out of 10.`;
         } else if (score >= 6 && score < 8) {
-          document.getElementById('result-score-text').innerHTML = 'Well Done! ${userName}. Your score is ${score} out of 10.';
+          document.getElementById('result-score-text').innerHTML = `Well Done! ${userName}. Your score is ${score} out of 10.`;
         } else if (score >= 4 && score < 6) {
-          document.getElementById('result-score-text').innerHTML = 'Nice Try! ${userName}. Your score is ${score} out of 10.';
+          document.getElementById('result-score-text').innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
         } else {
-          document.getElementById('result-score-text').innerHTML = 'Nice Try! ${userName}. Your score is ${score} out of 10.';
+          document.getElementById('result-score-text').innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
         }
-        setTimeOut(gameOver, 15000);
+        setTimeout(gameOver, 8000);
     }
   }
   if (correct) {
@@ -208,6 +205,30 @@ function checkAnswer(event) {
   }
 }
 
+function setStatusClass(element, correct) {
+  clearStatusClass(element);
+  if (correct) {
+    element.classList.add('correct');
+  } else {
+    element.classList.add('wrong');
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct');
+  element.classList.remove('wrong');
+}
+
+
+function incrementCorrectAnswer() {
+  let oldScore = parseInt(document.getElementById('corrects').innerText);
+  document.getElementById('corrects').innerText = oldScore + 1;
+}
+
+function incrementWrongAnswer() {
+  let oldScore = parseInt(document.getElementById('incorrects').innerText);
+  document.getElementById('incorrects').innerText = oldScore + 1;
+}
 
 function timeOutEndOfTheGame() {
   document.getElementById('questions-area').innerHTML = 
@@ -231,18 +252,4 @@ function restart() {
 
 function gameOver() {
   return window.location.assign('result.html');
-}
-
-
-
-
-
-function incrementCorrectAnswer() {
-  let oldScore = parseInt(document.getElementById('corrects').innerText);
-  document.getElementById('corrects').innerText = oldScore + 1;
-}
-
-function incrementWrongAnswer() {
-  let oldScore = parseInt(document.getElementById('incorrects').innerText);
-  document.getElementById('incorrects').innerText = oldScore + 1;
 }
