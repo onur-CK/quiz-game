@@ -35,7 +35,7 @@ var time = setInterval(qTimer, 1200);
 //event listeners for submit, next, rules and start buttons.
 startBtn.addEventListener('click', runGame);
 submit.addEventListener('click', playerName);
-nextBtn.addEventListener('click', nextQuestion);
+nextBtn.addEventListener('click', nextCurrentQuestion);
 quickzRules.addEventListener('click', showRules);
 closeBtn.addEventListener('click', reset);
 
@@ -51,6 +51,16 @@ function showRules () {
 } 
 
 
+function qTimer() {
+  document.getElementById('timerShow').innerHTML = sec;
+  sec--;
+  if (sec < -1) {
+    clearInterval(time);
+    timeOut();
+  }
+}
+
+
 function reset () {
   quickzRules.classList.remove('hide');
   resultText.classList.add('hide');
@@ -61,15 +71,30 @@ function reset () {
   introductionMain.classList.remove('hide');
 }
 
-
-
-function qTimer() {
-  document.getElementById('timerShow').innerHTML = sec;
-  sec--;
-  if (sec < -1) {
-    clearInterval(time);
-    timeOut();
+function playerName() {
+  const enteredUserName = document.getElementById('userName').value;
+  if (enteredUserName) {
+    userName = enteredUserName;
+    startBtn.classList.remove('hide');
+    submit.classList.add('hide');
+    scoreText.classList.add('hide');
+    closeBtn.addEventListener('click', reset);
+  } else {
+    scoreText.classList.remove('hide');
+    document.getElementById('rule-text-score').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
   }
+}
+
+function nextCurrentQuestion() {
+  if (answeredQuestions) {
+    answeredQuestions = false; //resets
+    sec = 30; //resets
+    time = setInterval(qTimer, 1200); // timer starts again
+  }
+  currentQuestion++;
+  getToNextQuestion();
+  clicks += 1; // increments number of completed questions
+  document.getElementById('question-counter').innerHTML = clicks; 
 }
 
 function runGame () {
@@ -91,7 +116,12 @@ function runGame () {
   clicks += 1; //increments q counter 
   document.getElementById('clicks').innerHTML = clicks;
   questionCont.classList.remove('hide');
-  nextQuestion();
+  getToNextQuestion();
+}
+
+function getToNextQuestion() {
+  defaultState();
+  displayQuestion(randomQuestions[currentQuestion]);
 }
 
 //gets the questions and answers to display
@@ -116,29 +146,11 @@ function defaultState() {
   }
 }
 
-f
-
-function nextQuestion () {
-  defaultState();
-  displayQuestion(randomQuestions[currentQuestion]);
-}
 
 
 
-//enter username and display in result
-function playerName() {
-  const enteredUserName = document.getElementById('userName').value;
-  if (enteredUserName) {
-    userName = enteredUserName;
-    startBtn.classList.remove('hide');
-    submit.classList.add('hide');
-    scoreText.classList.add('hide');
-    closeBtn.addEventListener('click', reset);
-  } else {
-    scoreText.classList.remove('hide');
-    document.getElementById('rule-text-score').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
-  }
-}
+
+
 
 
 
