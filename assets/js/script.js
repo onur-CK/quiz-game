@@ -211,7 +211,7 @@ function checkAnswer(event) {
 
 function timeOutEndOfTheGame() {
   document.getElementById('questions-area').innerHTML = 
-  `<strong><em>Unfortunately, time is up!,</em></strong> <br>`;
+  `<strong><em>Unfortunately, time is up!</em></strong> <br>`;
   timerShow.classList.add('hide');
   answersArea.classList.add('hide');
   correctsShow.classList.add('hide');
