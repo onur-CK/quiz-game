@@ -203,7 +203,9 @@ function checkAnswer(event) {
   }
 }
 
-
+function restart() {
+  return window.location.assign('end-of-timer.html');
+}
 
 function gameOver() {
   return window.location.assign('result.html');
