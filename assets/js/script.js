@@ -55,14 +55,7 @@ function showRules () {
 } 
 
 
-function qTimer() {
-  document.getElementById('timer').innerHTML = sec;
-  sec--;
-  if (sec < -1) {
-    clearInterval(time);
-    timeOut();
-  }
-}
+
 
 
 function reset () {
@@ -118,7 +111,7 @@ function runGame () {
   correctsShow.classList.remove('hide');
   incorrectsShow.classList.remove('hide');
   qCounterShow.classList.remove('hide');
-  
+  time = setInterval(qTimer, 1000);
   randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0,10); //stores and selects 10 random questions
   currentQuestion = 0;
   clicks += 1; //increments q counter 
