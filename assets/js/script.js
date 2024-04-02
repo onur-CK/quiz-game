@@ -118,6 +118,9 @@ function playerName() {
     submit.classList.add('hide');
     scoreText.classList.add('hide');
     closeBtn.addEvenetListener('click', reset);
+  } else {
+    scoreText.classList.remove('hide');
+    document.getElementById('rule-text-score').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
   }
 }
 
