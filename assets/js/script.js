@@ -109,6 +109,18 @@ function displayQuestion(question) {
   });
 }
 
+function defaultState() {
+  nextBtn.classList.add('hide');
+  while (answersArea.firstChild) {
+    answersArea.removeChild(answersArea.firstChild);
+  }
+}
+
+function nextQuestion () {
+  defaultState();
+  displayQuestion(randomQuestions[currentQuestion]);
+}
+
 //enter username and display in result
 function playerName() {
   const enteredUserName = document.getElementById('userName').value;
@@ -125,5 +137,5 @@ function playerName() {
 }
 
 
-function nextQuestion () {}
+
 function timeOut () {}
