@@ -155,12 +155,29 @@ function defaultState() {
   }
 }
 
+function checkAnswer(event) {
+  const selectedButton = event.target;
+  const correct = selectedButton.dataset.correct;
 
+  if (correct) {
+    selectedButton.classList.add('correct');
+    updateScore(true);
+  } else {
+    selectedButton.classList.add('incorrect');
+    updateScore(false);
+  }
 
+  Array.form(answersArea.children).forEach(button => {
+    if (button.dataset.correct) {
+      button.classList.add('correct');
+    }
+    button.removeEventListener('click', checkAnswer);
+  });
 
-
-
-
+  answeredQuestion = true;
+  clearInterval(time);
+  nextBtn.classList.remove('hide');
+}
 
 
 
