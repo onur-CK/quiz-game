@@ -177,12 +177,37 @@ function checkAnswer(event) {
     } else {
       sec = 30;
       timerShow.classList.add('hide');
-      s
+      setTimeOut(endScore, 3000);
+
+      function endscore() {
+        incorrectsShow.classList.add('hide');
+        correctsShow.classList.add('hide');
+        answersArea.classList.add('hide');
+        qCounterShow.classList.add('hide');
+        timerShow.classList.add('hide');
+        questionCont.classList.add('hide');
+        resultText.classList.remove('hide');
+        restartBtn.classList.add('hide');
+
+        if (score >= 8) {
+          document.getElementById('result-score-text').innerHTML = 'Awesome!! ${userName}. Your score is ${score} out of 10.';
+        } else if (score >= 6 && score < 8) {
+          document.getElementById('result-score-text').innerHTML = 'Well Done! ${userName}. Your score is ${score} out of 10.';
+        } else if (score >= 4 && score < 6) {
+          document.getElementById('result-score-text').innerHTML = 'Nice Try! ${userName}. Your score is ${score} out of 10.';
+        } else {
+          document.getElementById('result-score-text').innerHTML = 'Nice Try! ${userName}. Your score is ${score} out of 10.';
+        }
+        setTimeOut(gameOver, 15000);
     }
   }
 }
 
 
+
+function gameOver() {
+  return window.location.assign('result.html');
+}
 
 
 /*
