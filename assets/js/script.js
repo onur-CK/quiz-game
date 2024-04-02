@@ -116,10 +116,14 @@ function defaultState() {
   }
 }
 
+f
+
 function nextQuestion () {
   defaultState();
   displayQuestion(randomQuestions[currentQuestion]);
 }
+
+
 
 //enter username and display in result
 function playerName() {
