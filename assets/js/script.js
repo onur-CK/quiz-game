@@ -1,6 +1,7 @@
-document.addEvenetListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('questions-area').innerText = 'Welcome to Quickz';
 });
+
 
 //variables
 const startBtn = document.getElementById('start-btn');
@@ -29,7 +30,7 @@ let answeredQuestions = false;
 let score = 0;
 var sec = 20000; 
 var clicks = 0;
-var time = setInterval(myTimer, 1200);
+var time = setInterval(qTimer, 1200);
 
 //event listeners for submit, next, rules and start buttons.
 startBtn.addEventListener('click', runGame);
@@ -37,7 +38,21 @@ submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextQuestion);
 quickzRules.addEventListener('click', showRules);
 
+//function for displaying the rules of the quickz.
+function showRules () {
+  quickzRules.classList.add('hide');
+  introductionMain.classList.add('hide');
+  form.classList.add('hide');
+  quickzRulesDiv.classList.remove('hide');
+  submit.classList.remove('hide');
+  userName.classList.remove('hide');
+  closeBtn.addEventListener('click', reset);
+}
+
+
+
+
+function qTimer() {}
 function runGame() {}
 function playerName() {}
 function nextQuestion () {}
-function showRules ()
