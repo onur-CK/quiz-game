@@ -56,7 +56,7 @@ function showRules () {
 
 
 function qTimer() {
-  document.getElementById('timerShow').innerHTML = sec;
+  document.getElementById('timer').innerHTML = sec;
   sec--;
   if (sec < -1) {
     clearInterval(time);
@@ -95,7 +95,7 @@ function nextCurrentQuestion() {
   if (answeredQuestions) {
     answeredQuestions = false; //resets
     sec = 30; //resets
-    time = setInterval(qTimer, 1200); // timer starts again
+    time = setInterval(qTimer, 1000); // timer starts again
   }
   currentQuestion++;
   getToNextQuestion();
@@ -118,9 +118,9 @@ function runGame () {
   correctsShow.classList.remove('hide');
   incorrectsShow.classList.remove('hide');
   qCounterShow.classList.remove('hide');
+  
   randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0,10); //stores and selects 10 random questions
   currentQuestion = 0;
-  
   clicks += 1; //increments q counter 
   document.getElementById('question-counter').innerHTML = clicks;
   questionCont.classList.remove('hide');
@@ -155,6 +155,23 @@ function defaultState() {
   }
 }
 
+/*
+function updateScore(isCorrect) {
+  if (isCorrect) {
+    score++;
+    document.getElementById('corrects').innerText = score;
+  }
+}
+*/
+
+
+
+
+
+
+
+
+/*
 function checkAnswer(event) {
   const selectedButton = event.target;
   const correct = selectedButton.dataset.correct;
@@ -178,7 +195,73 @@ function checkAnswer(event) {
   clearInterval(time);
   nextBtn.classList.remove('hide');
 }
+*/
 
 
 
 
+// Declare timerInterval globally
+let timerInterval;
+
+// Function to start the timer for each question
+function startTimer() {
+  let secondsLeft = 30; // Set the initial time to 30 seconds
+
+  // Update the timer display every second
+  timerShow.textContent = secondsLeft;
+
+  // Update the timer interval every second
+  timerInterval = setInterval(() => {
+    secondsLeft--;
+    timerShow.textContent = secondsLeft;
+
+    // If the timer reaches 0, call the timeOut function
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      timeOut();
+    }
+  }, 1000);
+}
+
+// Function to check the selected answer
+function checkAnswer(event) {
+  const selectedButton = event.target;
+  const correct = selectedButton.dataset.correct;
+
+  if (correct) {
+    selectedButton.classList.add('correct');
+    updateScore(true);
+  } else {
+    selectedButton.classList.add('incorrect');
+    updateScore(false);
+    // Highlight the correct answer in green
+    const correctButton = Array.from(answersArea.children).find(button => button.dataset.correct === 'true');
+    correctButton.classList.add('correct');
+  }
+
+  // Disable all buttons to prevent further clicks
+  Array.from(answersArea.children).forEach(button => {
+    button.removeEventListener('click', checkAnswer);
+  });
+
+  // Set answeredQuestions to true to indicate that the question has been answered
+  answeredQuestions = true;
+
+  // Stop the timer
+  clearInterval(timerInterval);
+
+  // Show the next button
+  nextBtn.classList.remove('hide');
+}
+
+// Function to update the score
+function updateScore(isCorrect) {
+  if (isCorrect) {
+    score++;
+    document.getElementById('corrects').innerText = score;
+  } else {
+    // Increase the incorrect score if the answer is wrong
+    const incorrectScore = parseInt(document.getElementById('incorrects').innerText);
+    document.getElementById('incorrects').innerText = incorrectScore + 1;
+  }
+}
