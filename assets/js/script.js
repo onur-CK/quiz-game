@@ -201,6 +201,11 @@ function checkAnswer(event) {
         setTimeOut(gameOver, 15000);
     }
   }
+  if (correct) {
+    ();
+  } else {
+    
+  }
 }
 
 function restart() {
@@ -210,6 +215,17 @@ function restart() {
 function gameOver() {
   return window.location.assign('result.html');
 }
+
+function incrementCorrectAnswer() {
+  let oldScore = parseInt(document.getElementById('corrects').innerText);
+  document.getElementById('corrects').innerText = oldScore + 1;
+}
+
+function incrementWrongAnswer() {
+  let oldScore = parseInt(document.getElementById('incorrects').innerText);
+  document.getElementById('incorrects').innerText = oldScore + 1;
+}
+
 
 
 /*
