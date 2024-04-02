@@ -26,7 +26,7 @@ let resultText = document.getElementById('result-score-text');
 let scoreText = document.getElementById('score-text');
 let randomQuestions; //random question holder
 let currentQuestion; 
-let answeredQuestions = false;
+let questionAnswered = false;
 let score = 0;
 var sec = 20000; //time for starting the quiz
 var clicks = 0;
@@ -56,7 +56,7 @@ function showRules () {
 
 
 function qTimer() {
-  document.getElementById('timer').innerHTML = sec;
+  document.getElementById('timer-btn').innerHTML = `You have ${sec}s seconds to answer.`;
   sec--;
   if (sec < -1) {
     clearInterval(time);
@@ -92,8 +92,8 @@ function playerName() {
 
 
 function nextCurrentQuestion() {
-  if (answeredQuestions) {
-    answeredQuestions = false; //resets
+  if (questionAnswered) {
+    questionAnswered = false; //resets
     sec = 30; //resets
     time = setInterval(qTimer, 1000); // timer starts again
   }
@@ -155,6 +155,38 @@ function defaultState() {
   }
 }
 
+function checkAnswer(event) {
+  const clickedButton = event.target;
+  const correct = clickedButton.dataset.correct;
+
+  if(!clickedButton.classList.contains('answered')) {
+    clickedButton.classList.add('answered');
+    
+    if (correct) score++;
+
+    clearInterval(time); //stops the timer
+    questionAnswered: true;
+
+    setStatusClass(document.body, correct);
+    Array.from(answersArea.children).forEach((button) => {
+      setStatusClass(button, button.dataset.correct);
+      button.removeEventListener('click', checkAnswer);
+    });
+    if (randomQuestions.length > currentQuestion + 1) {
+      nextBtn.classList.remove('hide');
+    } else {
+      sec = 30;
+      timerShow.classList.add('hide');
+      s
+    }
+  }
+}
+
+
+
+
+/*
+
 // Declare timerInterval globally
 let timerInterval;
 
@@ -177,6 +209,7 @@ function startTimer() {
     }
   }, 1000);
 }
+
 
 // Function to check the selected answer
 function checkAnswer(event) {
@@ -207,6 +240,10 @@ function checkAnswer(event) {
   }
 }
 
+
+
+
+
 // Function to update the score
 function updateScore(isCorrect) {
   if (isCorrect) {
@@ -222,7 +259,7 @@ function updateScore(isCorrect) {
 // Function to handle the time-out scenario
 function timeOut() {
   timerShow.textContent = 'Time\'s up!';
-  document.getElementById('questions-area').innerHTML = 'Try faster next time! <br> Click to try again.';
+  document.getElementById('questions-area').innerHTML = 'Try faster next time! <br> Click here to try again.';
   document.getElementById('questions-area').addEventListener('click', runGame); // Allow the user to restart the game by clicking the message
 }
 
@@ -240,5 +277,4 @@ quickzRules.addEventListener('click', showRules);
 
 // Add event listener to close button
 closeBtn.addEventListener('click', reset);
-
-
+*/
