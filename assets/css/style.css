@@ -8,11 +8,11 @@ body{
   font-style: normal;
   background-color:white;
   text-align: center;
-  margin-top: 140px;
-  max-width: 2000px;
+  margin-top: 200px;
+  max-width: 3000px;
   justify-content: center;
   align-items: center;
-  min-height: 150vh;
+  min-height: 100vh;
 }
 
 .heading {
@@ -231,6 +231,27 @@ button:hover {
   background-color: red;
 }
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .userName {
+    max-width: 60%;
+  } 
+  .correct-scores-btn,
+  .incorrect-scores-btn,
+  .timer-btn,
+  .question-counter-btn {
+    width: 30%;
+    height: 30%; 
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .heading {
+    font-size: 25px;
+  }
+}
 
 
 

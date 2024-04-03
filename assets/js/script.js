@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //variables
 const startBtn = document.getElementById('start-btn');
-const nextBtn =  document.getElementById('next-btn');
-const restartBtn =  document.getElementById('restart-btn');
-const timerShow =  document.getElementById('timer-btn');
-const correctsShow =  document.getElementById('correct-scores-btn');
-const incorrectsShow =  document.getElementById('incorrect-scores-btn');
+const nextBtn = document.getElementById('next-btn');
+const restartBtn = document.getElementById('restart-btn');
+const timerShow = document.getElementById('timer-btn');
+const correctsShow = document.getElementById('correct-scores-btn');
+const incorrectsShow = document.getElementById('incorrect-scores-btn');
 const qCounterShow =  document.getElementById('question-counter-btn');
 const quickzRules = document.getElementById('quickz-rules');
 const quickzRulesDiv = document.getElementById('quickz-rules-info');
@@ -38,7 +38,7 @@ startBtn.addEventListener('click', runGame);
 submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextCurrentQuestion);
 quickzRules.addEventListener('click', showRules);
-closeBtn.addEventListener('click', reset);
+
 
 
 //function for displaying the rules of the quickz.
@@ -49,7 +49,7 @@ function showRules () {
   quickzRulesDiv.classList.remove('hide');
   submit.classList.remove('hide');
   userName.classList.remove('hide');
-  
+  closeBtn.addEventListener('click', reset);
 } 
 
 function qTimer() {
@@ -79,7 +79,6 @@ function playerName() {
     submit.classList.add('hide');
     scoreText.classList.add('hide');
     closeBtn.addEventListener('click', reset);
-    runGame();
     } else {
     scoreText.classList.remove('hide');
     document.getElementById('score-text').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
@@ -108,7 +107,7 @@ function runGame () {
   quickzRulesDiv.classList.add('hide');
   form.classList.add('hide');
   submit.classList.add('hide');
-  userNameLabel.classList.add('hide');
+  userNameLabel.classList.add('hide');  
   introductionMain.classList.add('hide');
   timerShow.classList.remove('hide');
   correctsShow.classList.remove('hide');
@@ -155,55 +154,68 @@ function checkAnswer(event) {
   const clickedButton = event.target;
   const correct = clickedButton.dataset.correct;
 
-  if(!clickedButton.classList.contains('answered')) {
+  // Add a class to mark this button as answered
+  if (!clickedButton.classList.contains('answered')) {
     clickedButton.classList.add('answered');
   }  
-    if (correct) score++;
 
-    clearInterval(time); //stops the timer
-    questionAnswered = true;
-    console.log(questionAnswered);
-
-    setStatusClass(document.body, correct);
-    Array.from(answersArea.children).forEach((button) => {
-      setStatusClass(button, button.dataset.correct);
-      button.removeEventListener('click', checkAnswer);
-    });
-    if (randomQuestions.length > currentQuestion + 1) {
-      nextBtn.classList.remove('hide');
-    } else {
-      sec = 30;
-      timerShow.classList.add('hide');
-      setTimeout(endScore, 3000);
-
-      function endScore() {
-        incorrectsShow.classList.add('hide');
-        correctsShow.classList.add('hide');
-        answersArea.classList.add('hide');
-        qCounterShow.classList.add('hide');
-        timerShow.classList.add('hide');
-        questionCont.classList.add('hide');
-        resultText.classList.remove('hide');
-        restartBtn.classList.add('hide');
-
-        if (score >= 8) {
-          document.getElementById('result-score-text').innerHTML = `Awesome!! ${userName}. Your score is ${score} out of 10.`;
-        } else if (score >= 6 && score < 8) {
-          document.getElementById('result-score-text').innerHTML = `Well Done! ${userName}. Your score is ${score} out of 10.`;
-        } else if (score >= 4 && score < 6) {
-          document.getElementById('result-score-text').innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
-        } else {
-          document.getElementById('result-score-text').innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
-        }
-        setTimeout(gameOver, 8000);
-    }
-  }
+  // Check if the answer is correct
   if (correct) {
+    // Increment the score and track correct answers
+    score++;
     incrementCorrectAnswer();
   } else {
+    // Track incorrect answers
     incrementWrongAnswer();
   }
+
+  // Stop the timer and indicate that the question is answered
+  clearInterval(time);
+  questionAnswered = true;
+
+  // Set status class for the clicked button and remove event listener
+  setStatusClass(document.body, correct);
+  Array.from(answersArea.children).forEach((button) => {
+    setStatusClass(button, button.dataset.correct);
+    button.removeEventListener('click', checkAnswer);
+  });
+
+  // Check if there are more questions remaining
+  if (randomQuestions.length > currentQuestion + 1) {
+    nextBtn.classList.remove('hide');
+  } else {
+    // If no more questions, display the result after a delay
+    sec = 30;
+    timerShow.classList.add('hide');
+    setTimeout(endScore, 3000);
+  }
 }
+
+function endScore() {
+  // Hide elements and display result based on score
+  incorrectsShow.classList.add('hide');
+  correctsShow.classList.add('hide');
+  answersArea.classList.add('hide');
+  qCounterShow.classList.add('hide');
+  timerShow.classList.add('hide');
+  questionCont.classList.add('hide');
+  resultText.classList.remove('hide');
+  restartBtn.classList.add('hide');
+
+  if (score >= 8) {
+    document.getElementById('result-score-text').innerHTML = `Awesome!! ${userName}. Your score is ${score} out of 10.`;
+  } else if (score >= 6 && score < 8) {
+    document.getElementById('result-score-text').innerHTML = `Well Done! ${userName}. Your score is ${score} out of 10.`;
+  } else if (score >= 4 && score < 6) {
+    document.getElementById('result-score-text').innerHTML = `Congratulations! ${userName}. Your score is ${score} out of 10.`;
+  } else {
+    document.getElementById('result-score-text').innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
+  }
+
+  // Redirect to the game over page after a delay
+  setTimeout(gameOver, 8000);
+}
+
 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
