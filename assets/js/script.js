@@ -53,7 +53,7 @@ function showRules () {
 } 
 
 function qTimer() {
-  document.getElementById('timer-btn').innerHTML = `You have ${sec}s seconds to answer.`;
+  document.getElementById('timer-btn').innerHTML = `${sec}s seconds to answer.`;
   sec--;
   if (sec < -1) {
     clearInterval(time);

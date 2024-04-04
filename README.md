@@ -1,8 +1,8 @@
 # QUICKZ GAME
 
-This is a website to test your general knowledge by asking you questions with 4 possible answers.
+This is a website to test your general knowledge by asking you questions with four possible answers.
 
-![Unbenannt](https://github.com/onur-CK/quiz-game/assets/118271710/2d355e0b-e3c3-490d-9469-e54a5203ef86)
+![AmIResponsive](https://github.com/onur-CK/pp1reviews/assets/118271710/cfbbedda-bdd3-4314-ab03-f5c8ee1bd506)
 
 [You can check the live website on github.](https://onur-ck.github.io/quiz-game/)
 
@@ -166,6 +166,18 @@ I tested my js file and i had 40 warnings with the same "These variables and syn
 ![404 validate](https://github.com/onur-CK/pp1reviews/assets/118271710/851f00cc-6df3-4e7d-8781-51236e8c0b46)
 ![css validate](https://github.com/onur-CK/pp1reviews/assets/118271710/f9f2d4ab-d736-44d4-9967-0fcdbb9365ff)
 
+For the lighthouse testing at first i got this results;
+![Lighthouse mobile](https://github.com/onur-CK/pp1reviews/assets/118271710/6f09691c-892f-4b92-aad6-b4e964c011a2)
+![Light house desktop](https://github.com/onur-CK/pp1reviews/assets/118271710/455efa63-1bea-423c-9e5f-b19501ac7074)
+
+And after checking the reason of low level of accesibility i found the solution at this video:
+[Aman Jaiswal](https://www.youtube.com/watch?v=pxIlxtV2DbI)
+I fixed it by creating a "for" declaration inside my label element with the id of my input.
+
+and these are the end results for my lighthouse testings for both mobile and desktop:
+![light house mobile fixed](https://github.com/onur-CK/pp1reviews/assets/118271710/d882efbc-5611-41c3-b91e-baa45d313812)
+![Lighthouse desktop fixed](https://github.com/onur-CK/pp1reviews/assets/118271710/4a996495-b5c1-416a-a81b-5f4d3e92db67)
+
 
 
 ## Credits
@@ -210,7 +222,8 @@ Mentor "Daisy Mc Girr" on Slack she helped me through displaying the question an
 "Kay Welfare" helped me for understanding the basics of pp2.She showed me projects to have some ideas.Pointed out the important parts i need to focus on.
 We checked some finished projects together to have better understanding of what kind of project i need to build for my pp2.
 
-
-"Vernell Clark" is literally saved the day for me.Without him, i couldn't be able to finish the project and submit before the deadline.First of all he motivated me that i can fix the problems and than help me through all of them.We fixed the decent repating functions and syntaxes on the project together.
-And he also provided me the template of this readme file.
+HUGE THANKS to: "Vernell Clark"
+ He has literally saved the day for me.Without him, i couldn't be able to finish the project and submit before the deadline.First of all he motivated me that i can fix the problems and than helped me through all of them.We fixed the decent repating functions and syntaxes on the project together.
+ And he also provided me the template of this readme file.And having this kind of support from him made me to understand the power of the teamwork.
+ 
 
