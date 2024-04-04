@@ -155,7 +155,7 @@ To clone the Quickz game repository:
 ## Testing
 
 Testing was always there along the entire project build.I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. 
-I had problem with the timer function and i couldnt fix it.It goes too fast and doesnt refresh just after going to next question.But i didnt delete this function completely to be able to fix and use in the future.
+I had problem with the timer function and i couldnt fix it.It goes too fast and doesn't refresh just after going to next question.But i didn't delete this function completely to be able to fix and use in the future.
 I tested all the html and css files.They all work fine.
 I tested my js file and i had 40 warnings with the same "These variables and syntaxs available in ES6".And i fixed it by creating a settins.json file with {"jshint.options": {"esversion": 6}}.  
 
@@ -170,22 +170,47 @@ I tested my js file and i had 40 warnings with the same "These variables and syn
 
 ## Credits
 
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
+[The General Quiz of Everything](https://pdoylec.github.io/PP2-The-General-Quiz-Of-Everything/)
 
-The Credits section is where you can credit all the people and sources you used throughout your project.
+I got inspired by this quiz game idea which is provided me by my facilitator to have some ideas about my quiz game project.
+I fixed some of the bugs related using the functions and syntax more than once.(Timer function, calling the next question function.)
+
+
+[SuperSimpleDev](https://www.youtube.com/watch?v=SBmSRK3feww&t=41805s)
+I completed this tutorial completely and built:
+* To do list
+* Youtube clone
+* Rock Paper Scissors game
+to have better understanding of javascript.
+
+[Kera-Cudmore/Bully-Book-Club](https://github.com/kera-cudmore/Bully-Book-Club/blob/main/README.md) I used this project's readme template and adapted it to my own project.
+
+
+[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) I took the questions from this website for my quiz game.
+
 
 ### Code Used
 
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
+[The General Quiz of Everything](https://pdoylec.github.io/PP2-The-General-Quiz-Of-Everything/)
+Most of the functions i used on my project is taken from this project and built on that.Also i fixed some of the repating functions and syntaxes.
 
 ### Content
 
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
+[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) I took the questions from this website for my quiz game.
+All questions content is taken from this website to be used on my project.
 
 ###  Media
 
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
+I didnt use any kind of media on this project.
   
 ###  Acknowledgments
 
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
+Mentor "Daisy Mc Girr" on Slack she helped me through displaying the question and answers section of my project after clicking submit.
+
+"Kay Welfare" helped me for understanding the basics of pp2.She showed me projects to have some ideas.Pointed out the important parts i need to focus on.
+We checked some finished projects together to have better understanding of what kind of project i need to build for my pp2.
+
+
+"Vernell Clark" is literally saved the day for me.Without him, i couldn't be able to finish the project and submit before the deadline.First of all he motivated me that i can fix the problems and than help me through all of them.We fixed the decent repating functions and syntaxes on the project together.
+And he also provided me the template of this readme file.
+
