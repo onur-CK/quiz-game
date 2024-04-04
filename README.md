@@ -1,13 +1,10 @@
 # QUICKZ GAME
 
-
-👩🏻‍💻 View an example of this section [here](https://github.com/kera-cudmore/Bully-Book-Club#bully-book-club-website)
-
 This is a website to test your general knowledge by asking you questions with 4 possible answers.
 
 ![Unbenannt](https://github.com/onur-CK/quiz-game/assets/118271710/2d355e0b-e3c3-490d-9469-e54a5203ef86)
 
-Add a link to the live site here, for Milestone 1 this will be the GitHub Pages Link from when you deployed the site.
+[You can check the live website on github.](https://onur-ck.github.io/quiz-game/)
 
 If you want to add optional [shields.io](https://shields.io) badges to your README, I like to add them to this section.
 
