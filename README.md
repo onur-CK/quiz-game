@@ -78,7 +78,9 @@ For now i dont think about including images.Maybe in the future i can add some q
 
 ## Features
 
-This website only one main page guides you through answering questions.Question and answers window shown once user submits after entering a username.Rules window is shown when rules button is clicked.
+* This website only one main page guides you through answering questions.
+* Question and answers window shown once user submits after entering a username.
+* Rules window is shown when rules button is clicked.
 
 ### General features
 
@@ -90,35 +92,31 @@ This website only one main page guides you through answering questions.Question 
 
 ### Future Implementations
 
-I would like to add difficulties options.
+* Difficulties options.
+* To fix the present timer bug.
+* To track answered correct and incorrect answers simultaneously.
+* To add more questions with different categories.
+* To add questions and answer options with images.
 
 ### Accessibility
 
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
-
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
-
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
-
-Code Institute have an amazing channel for all things accessibility (a11y-accessibility) I would highly recommend joining this channel as it contains a wealth of information about accessibility and what we can do as developers to be more inclusive.
+* Tried to keep the design user friendly.
+* Targeted to not have anything complex.
+* Used only one page to guide the user through the all futures.
+* Used different colors to make everything easier for user.
 
 ## Technologies Used
 
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
-
 ### Languages Used
 
-Make a note here of all the languages used in creating your project. For the first project this will most likely just be HTML & CSS.
+* HTML
+* CSS
+* JAVASCRIPT
 
 ### Frameworks, Libraries & Programs Used
 
-Add any frameworks, libraries or programs used while creating your project.
+[Google Drawings](https://docs.google.com/drawings/d/1GtZgh9leBaFN6rgcr1lXoov28yN3d6K94PHb0BjKS6E/edit)
 
-Make sure to include things like git, GitHub, the program used to make your wireframes, any programs used to compress your images, did you use a CSS framework like Bootstrap? If so add it here (add the version used).
-
-A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
 
 ## Deployment & Local Development
 
