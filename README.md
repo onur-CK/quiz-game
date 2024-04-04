@@ -6,9 +6,7 @@ This is a website to test your general knowledge by asking you questions with 4 
 
 [You can check the live website on github.](https://onur-ck.github.io/quiz-game/)
 
-If you want to add optional [shields.io](https://shields.io) badges to your README, I like to add them to this section.
 
----
 
 ## CONTENTS
 
@@ -48,61 +46,51 @@ If you want to add optional [shields.io](https://shields.io) badges to your READ
 
 ## User Experience (UX)
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
+Quickz is a website that tests user's general knowledge and create some fun time for the user at the same time.
 
 ### User Stories
 
-Add your user stories here. You want to include first time visitors and returning visitors here as a minimum. Think about each group, and the experience and journey you want them to have on your site. It really helps to think about this before you start coding, and will really help with creating your wireframes.
+I wanted to use a simple design to make it user friendly.It is ready to go just after entering a username and clicking submit.I think about creating difficulty modes with different timebounds to questions.
 
 ## Design
 
-👩🏻‍💻 View an example of a completed design section [here](https://github.com/kera-cudmore/earth-day-hackathon-2022#Design)
-
 ### Colour Scheme
 
-Add all information about your colour scheme for your site here. You can explain why you choose the colours you did?
+I decided to use eye catching colors and also keep the readability high at the same time to not cause it to tire the user's eyes.
 
-I like to include a palette of the colour scheme here, my favourite site for creating a colour palette is [coolors](https://coolors.co/), but there are lots of other sites that also do the same thing, like [ColorSpace](https://mycolor.space/?hex=%23F5F5F5&sub=1), [Muzli Colors](https://colors.muz.li/), [Adobe Colour Wheel](https://color.adobe.com/create/color-wheel) and [Canva](https://www.canva.com/colors/color-palette-generator/) to name a few.
+![colors](https://github.com/onur-CK/pp1reviews/assets/118271710/3744b18e-e18b-4d61-b941-bd683f65c92a)
 
 ### Typography
 
-If you've imported fonts to use in your project, add some information about them here. You can include information like:
+I chose this font-family beacuse i found it easy to read and have a nice look at the same time.
 
-Why did you choose the font you have?
-Is this an accessibly friendly font?
-What weights have you included?
+![font](https://github.com/onur-CK/pp1reviews/assets/118271710/5412945f-4ca3-480b-8ebc-093fa68617f0)
 
-I also like to include an image of the fonts chosen as a reference.
-
-[Google Fonts](https://fonts.google.com/) is a popular choice for importing fonts to use in your project, as it doesn't require you to download the fonts to use them.
+[Google Fonts](https://fonts.google.com/) 
 
 ### Imagery
 
-Use this section to explain what sort of imagery you plan to use through your site.
+For now i dont think about including images.Maybe in the future i can add some questions with images, so user can answer by clicking the images.
 
 ### Wireframes
 
-Add the images or links for your wireframes here.
-
-There are lots of different options to create your wireframes - Code Institute students can access [Balsamiq](https://balsamiq.com/) as part of the course.
-
-Some other options include [Figma](https://www.figma.com/), [AdobeXD](https://www.adobe.com/products/xd.html), [Sketch](https://www.sketch.com/?utm_source=google&utm_medium=cpc&adgroup=uxui&device=c&matchtype=e&utm_campaign=ADDICTMOBILE_SKETCH_GAD_DG_UK_T1_ALWAYS-ON_S_TRF_PROS_BRAND&utm_term=sketch&utm_source=google&utm_medium=cpc&utm_content=TOF_BRND__generic&hsa_acc=8710913982&hsa_cam=16831089317&hsa_grp=134620695759&hsa_ad=592060065319&hsa_src=g&hsa_tgt=kwd-14921750&hsa_kw=sketch&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwr4eYBhDrARIsANPywCjRIFn93DMezYnsyE5Fic_8l8kynJtut0GYMU01TiohHjwziFtlH0gaAhteEALw_wcB) and [Mockup](https://apps.apple.com/us/app/mockup-sketch-ui-ux/id1527554407) to name just a few! Or you can even go old school and get those wireframes completed using pen and paper. Just snap an image of the completed wireframes to add the images to the README.
+![wireframe](https://github.com/onur-CK/pp1reviews/assets/118271710/a4a8eb07-0732-41e5-8d1b-07487e02a224)
 
 ## Features
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/TheQuizArms#Features)
+This website only one main page guides you through answering questions.Question and answers window shown once user submits after entering a username.Rules window is shown when rules button is clicked.
 
-This section can be used to explain what pages your site is made up of.
+### General features
 
-### General features on each page
+* There are 10 random questions shown along the game out of 40 questions.
+* Rules are shown when user clicks the rules button.
+* We have a little window to track the current questions number.(1/10)
+* We save the progress and username to display a result information at the end of the game.
 
-If there is a feature that appears on all pages of your site, include it here. Examples of what to include would the the navigation, a footer and a favicon.
-
-I then like to add a screenshot of each page of the site here, i use [amiresponsive](https://ui.dev/amiresponsive) which allows me to grab an image of the site as it would be displayed on mobile, tablet and desktop, this helps to show the responsiveness of the site.
 
 ### Future Implementations
 
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+I would like to add difficulties options.
 
 ### Accessibility
 
