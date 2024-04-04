@@ -181,7 +181,7 @@ button:hover {
 .start-btn,
 .next-btn {
   width: 25%;
-  margin: 12px 1;
+  margin: 12px 0;
 }
 
 @keyframes glowing {

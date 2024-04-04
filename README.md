@@ -115,16 +115,24 @@ For now i dont think about including images.Maybe in the future i can add some q
 
 ### Frameworks, Libraries & Programs Used
 
-[Google Drawings](https://docs.google.com/drawings/d/1GtZgh9leBaFN6rgcr1lXoov28yN3d6K94PHb0BjKS6E/edit)
-
+* [Google Drawings](https://docs.google.com/drawings/d/1GtZgh9leBaFN6rgcr1lXoov28yN3d6K94PHb0BjKS6E/edit) to draw the  wireframe.
+* [Github](https://github.com/) to save and store the files for the website.
+* [Google Fonts](https://fonts.google.com/) to import the font used on the website.
+* [Google Dec Tools](https://developer.chrome.com/docs/devtools) to troubleshoot and test the features, solve issues with responsiveness and styling.
+* [Am I Responsive](https://ui.dev/amiresponsive) to show the website image on a range of devices.
 
 ## Deployment & Local Development
 
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here](https://github.com/kera-cudmore/TheQuizArms#Deployment)
-
 ### Deployment
 
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
+Github Pages was used to deploy the live website. The instructions to achieve this are below:
+
+1. Log in (or sign up) to Github.
+2. Find the repository for this project.
+3. Click on the Settings section.
+4. Click on the Pages link in the left hand side navigation bar.
+5. In the Source section, choose main from the drop down select branch menu. Select Root from the drop down select folder menu.
+6. Click Save. Your live Github Pages site is now deployed at the URL shown.
 
 ### Local Development
 
@@ -136,15 +144,29 @@ Place instructions on how to fork your project here.
 
 #### How to Clone
 
-Place instructions on how to clone your project here.
+To clone the Quickz game repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project.
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
 ## Testing
 
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
+Testing was always there along the entire project build.I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. 
+I had problem with the timer function and i couldnt fix it.It goes too fast and doesnt refresh just after going to next question.But i didnt delete this function completely to be able to fix and use in the future.
+I tested all the html and css files.They all work fine.
+I tested my js file and i had 40 warnings with the same "These variables and syntaxs available in ES6".And i fixed it by creating a settins.json file with {"jshint.options": {"esversion": 6}}.  
 
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
-  
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
+![end of timer validate](https://github.com/onur-CK/pp1reviews/assets/118271710/4f0507b0-4e86-4bbb-876b-b7301b6693d9)
+![index html validate](https://github.com/onur-CK/pp1reviews/assets/118271710/75c8f993-0acc-4582-97e3-70ebf8185cbd)
+![result validate](https://github.com/onur-CK/pp1reviews/assets/118271710/02e99c96-b7fe-4d25-b3d1-7a59bfde8b05)
+![jshint](https://github.com/onur-CK/pp1reviews/assets/118271710/33197898-a43b-42fd-ab11-241a154c4308)
+![404 validate](https://github.com/onur-CK/pp1reviews/assets/118271710/851f00cc-6df3-4e7d-8781-51236e8c0b46)
+![css validate](https://github.com/onur-CK/pp1reviews/assets/118271710/f9f2d4ab-d736-44d4-9967-0fcdbb9365ff)
+
+
 
 ## Credits
 
