@@ -46,27 +46,30 @@ This is a website to test your general knowledge by asking you questions with fo
 
 ## User Experience (UX)
 
-Quickz is a website that tests user's general knowledge and create some fun time for the user at the same time.
+Quickz is a website that tests a user's general knowledge and creates a fun experience for the user as well.
+
 
 ### User Stories
 
-I wanted to use a simple design to make it user friendly.It is ready to go just after entering a username and clicking submit.I think about creating difficulty modes with different timebounds to questions.
+* As a user, I want to experience a simple design that is easy to understand.
+* As a user, I expect to be able to play just after entering a username and clicking submit.
+* As a returning user, I expect to experience a variety of difficulty modes with different amounts of time allotted to questions.
 
 ## Design
 
-### Colour Scheme
+### Color Scheme
 
-I decided to use eye catching colors and also keep the readability high at the same time to not cause it to tire the user's eyes.
+I decided to use eye-catching colors that also maintain a high readability that is easy on the user's eyes.
 
 ![colors](https://github.com/onur-CK/pp1reviews/assets/118271710/3744b18e-e18b-4d61-b941-bd683f65c92a)
 
 ### Typography
 
-I chose this font-family beacuse i found it easy to read and have a nice look at the same time.
+I chose this font-family because I found it easy to read and nice to look at.
 
 ![font](https://github.com/onur-CK/pp1reviews/assets/118271710/5412945f-4ca3-480b-8ebc-093fa68617f0)
 
-[Google Fonts](https://fonts.google.com/) 
+[Google Fonts](https://fonts.google.com/)
 
 ### Imagery
 
@@ -78,34 +81,32 @@ For now i dont think about including images.Maybe in the future i can add some q
 
 ## Features
 
-* This website only one main page guides you through answering questions.
-* Question and answers window shown once user submits after entering a username.
-* Rules window is shown when rules button is clicked.
+* This website uses one main page to guide the user through answering questions.
+* The main question and answer window is shown once the user clicks on the submit button, after they have entered a username.
+* There is a rules window with instructions for the game.
 
 ### General features
 
-* There are 10 random questions shown along the game out of 40 questions.
-* Rules are shown when user clicks the rules button.
-* We have a little window to track the current questions number.(1/10)
-* We save the progress and username to display a result information at the end of the game.
+* There are 10 random questions that are shown during one quiz session out of a possible 40 questions.
+* The rules are shown when user clicks the rules button.
+* There is a small window, that is used to inform the user of their current question number, out of the total number of questions remaining in their session . (1/10)
+* The user's score progress, and username information are used to display a result at the end of the game.
 
 
 ### Future Implementations
 
-* Difficulties options.
-* To fix the present timer bug.
-* To track answered correct and incorrect answers simultaneously.
-* To add more questions with different categories.
-* To add questions and answer options with images.
+* Difficulty options.
+* Fix the timer bug.
+* Track the number of correctly and incorrectly answered questions and simultaneously display this information to the user.
+* Provide a larger selection of questions with choices from a variety of different categories.
+* Add question and answer options that include images.
 
 ### Accessibility
 
-* Tried to keep the design user friendly.
-* Targeted to not have anything complex.
-* Used only one page to guide the user through the all futures.
-* Used different colors to make everything easier for user.
-
-## Technologies Used
+* User friendly design.
+* Intuitive controls.
+* One page for easy navigation and to guide the user through the all futures.
+* Appropriate colors to make things easier to find and interact with.
 
 ### Languages Used
 
@@ -118,8 +119,12 @@ For now i dont think about including images.Maybe in the future i can add some q
 * [Google Drawings](https://docs.google.com/drawings/d/1GtZgh9leBaFN6rgcr1lXoov28yN3d6K94PHb0BjKS6E/edit) to draw the  wireframe.
 * [Github](https://github.com/) to save and store the files for the website.
 * [Google Fonts](https://fonts.google.com/) to import the font used on the website.
-* [Google Dec Tools](https://developer.chrome.com/docs/devtools) to troubleshoot and test the features, solve issues with responsiveness and styling.
+* [Google Dec Tools](https://developer.chrome.com/docs/devtools) to troubleshoot and test features, and to solve issues with responsiveness and styling.
 * [Am I Responsive](https://ui.dev/amiresponsive) to show the website image on a range of devices.
+* [Diffchecker](https://www.diffchecker.com/) to compare the code during creation.
+* [W3C](https://validator.w3.org/) for HTML code validation.
+* [Jigsaw](https://jigsaw.w3.org/css-validator/) for CSS validation.
+* [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de) to evaluate user experience, best practices, accessibility, and overall performance.
 
 ## Deployment & Local Development
 
@@ -154,17 +159,16 @@ To clone the Quickz game repository:
 
 ## Testing
 
-Testing was always there along the entire project build.I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. 
-I had problem with the timer function and i couldnt fix it.It goes too fast and doesn't refresh just after going to next question.But i didn't delete this function completely to be able to fix and use in the future.
-I tested all the html and css files.They all work fine.
-I tested my js file and i had 40 warnings with the same "These variables and syntaxs available in ES6".And i fixed it by creating a settins.json file with {"jshint.options": {"esversion": 6}}.  
+Testing was routinely conducted during the entire project build.  I utilized Chrome Developer Tools, while building, to pinpoint and troubleshoot any issues as I went along. I had a problem with the timer function and I couldn't fix it in time.  It currently, increments too fast, and doesn't refresh just after going to next question.  I decided not to delete this function completely, because I want to be able to fix and use it in the project in the future. I tested all the HTML and CSS files using code validation.  They all were evaluated to have no errors. Initially, I tested my JavaScript file, and the validation detected 40 warnings with the same "These variables and syntax available in ES6".And I fixed it by creating a settings.json file with {"jshint.options": {"esversion": 6}}.
 
+![jshint](https://github.com/onur-CK/pp1reviews/assets/118271710/33197898-a43b-42fd-ab11-241a154c4308)
 ![end of timer validate](https://github.com/onur-CK/pp1reviews/assets/118271710/4f0507b0-4e86-4bbb-876b-b7301b6693d9)
 ![index html validate](https://github.com/onur-CK/pp1reviews/assets/118271710/75c8f993-0acc-4582-97e3-70ebf8185cbd)
 ![result validate](https://github.com/onur-CK/pp1reviews/assets/118271710/02e99c96-b7fe-4d25-b3d1-7a59bfde8b05)
-![jshint](https://github.com/onur-CK/pp1reviews/assets/118271710/33197898-a43b-42fd-ab11-241a154c4308)
 ![404 validate](https://github.com/onur-CK/pp1reviews/assets/118271710/851f00cc-6df3-4e7d-8781-51236e8c0b46)
 ![css validate](https://github.com/onur-CK/pp1reviews/assets/118271710/f9f2d4ab-d736-44d4-9967-0fcdbb9365ff)
+![jigsaw css](https://github.com/onur-CK/pp1reviews/assets/118271710/b57626f5-f2c5-4109-b0b3-13f12f1f6595)
+
 
 For the lighthouse testing at first i got this results;
 ![Lighthouse mobile](https://github.com/onur-CK/pp1reviews/assets/118271710/6f09691c-892f-4b92-aad6-b4e964c011a2)
@@ -184,46 +188,37 @@ and these are the end results for my lighthouse testings for both mobile and des
 
 [The General Quiz of Everything](https://pdoylec.github.io/PP2-The-General-Quiz-Of-Everything/)
 
-I got inspired by this quiz game idea which is provided me by my facilitator to have some ideas about my quiz game project.
-I fixed some of the bugs related using the functions and syntax more than once.(Timer function, calling the next question function.)
+I was inspired by a quiz game idea that was used as an example to me by my cohort facilitator, so that I could have some ideas to complete my own quiz game project. I fixed some of the bugs related to using the functions and syntax more than once. (Timer function, calling the next question function.)
 
 
 [SuperSimpleDev](https://www.youtube.com/watch?v=SBmSRK3feww&t=41805s)
-I completed this tutorial completely and built:
+Using the SuperSimpleDev tutorials in order to have a better understanding of JS, I built:
 * To do list
 * Youtube clone
 * Rock Paper Scissors game
-to have better understanding of javascript.
 
-[Kera-Cudmore/Bully-Book-Club](https://github.com/kera-cudmore/Bully-Book-Club/blob/main/README.md) I used this project's readme template and adapted it to my own project.
+[Kera-Cudmore/Bully-Book-Club](https://github.com/kera-cudmore/Bully-Book-Club/blob/main/README.md)  
+I used the Kera-Cudmore/Bully-Book-Club repository's readme template, and adapted it to my own project.
 
 
-[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) I took the questions from this website for my quiz game.
-
+[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) 
+I adopted questions from this website for my quiz game.
 
 ### Code Used
 
 [The General Quiz of Everything](https://pdoylec.github.io/PP2-The-General-Quiz-Of-Everything/)
-Most of the functions i used on my project is taken from this project and built on that.Also i fixed some of the repating functions and syntaxes.
+Most of the functions used on my project are adopted from this project and built using that as baseline. I adjusted some of the repeating functions and syntaxes to suit my own purposes.
 
 ### Content
 
-[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) I took the questions from this website for my quiz game.
-All questions content is taken from this website to be used on my project.
+[LiveReacting](https://blog.livereacting.com/100-fun-general-knowledge-quiz-questions-2024/) 
+I adopted the questions from this website for my quiz game.
+All questions and content are adopted from this website for my project.
 
-###  Media
-
-I didnt use any kind of media on this project.
-  
 ###  Acknowledgments
 
-Mentor "Daisy Mc Girr" on Slack she helped me through displaying the question and answers section of my project after clicking submit.
+Mentor "Daisy Mc Girr" on Slack helped me to display the question and answers section of my project after clicking submit.
 
-"Kay Welfare" helped me for understanding the basics of pp2.She showed me projects to have some ideas.Pointed out the important parts i need to focus on.
-We checked some finished projects together to have better understanding of what kind of project i need to build for my pp2.
+My cohort facilitator, "Kay Welfare", helped me with understanding the basics of pp2.  She showed some project examples so that I could have some ideas about how to complete my project.  She also pointed out the important parts of fulfilling the project completion criteria I needed to focus on. We examined some finished projects together so that I would have a better understanding of what kind of project I need to build for my pp2.
 
-HUGE THANKS to: "Vernell Clark"
- He has literally saved the day for me.Without him, i couldn't be able to finish the project and submit before the deadline.First of all he motivated me that i can fix the problems and than helped me through all of them.We fixed the decent repating functions and syntaxes on the project together.
- And he also provided me the template of this readme file.And having this kind of support from him made me to understand the power of the teamwork.
- 
-
+HUGE THANKS to: "Vernell Clark" He has literally saved the day for me.  Without him, I couldn't be able to finish the project and submit before the deadline. First of all, he motivated me so that I could fix the problems, and then helped me through all of them.  We fixed the some of the repeating functions and syntaxes on the project by discussing them together. He also provided me with the template of this readme file. Having this kind of support from him, made me understand the power of the teamwork and peer review.
