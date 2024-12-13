@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('timer-btn').classList.add('hide');
+  const timerBtn = document.getElementById('timer-btn');
+  if (timerBtn) {
+    timerBtn.classList.add('hide');
+  }
   document.getElementById('questions-area').innerText = 'Welcome to Quickz';
 });
 

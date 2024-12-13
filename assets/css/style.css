@@ -201,7 +201,7 @@ button:hover {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .start-btn,
@@ -250,11 +250,11 @@ button:hover {
 }
 
 .btn.correct {
-  background-color: green;
+  background-color: #388e3c;
 }
 
 .btn.wrong {
-  background-color: red;
+  background-color: #d32f2f;
 }
 
 
