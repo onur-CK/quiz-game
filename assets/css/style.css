@@ -92,6 +92,9 @@ body{
   border-radius: 4px;
 }
 
+.usernameLabel {
+  margin-bottom: 10px;
+}
 
 .introduction,
 .usernameLabel {
@@ -104,6 +107,7 @@ body{
   border-radius: 20px;
   padding: 14px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .score-area {
@@ -229,6 +233,7 @@ button:hover {
 
 #quickz-rules {
   animation: glowing 1200ms infinite;
+  margin-bottom: 20px;
 }
 
 .ooops {
@@ -279,6 +284,10 @@ button:hover {
     border: 2px solid black;
     box-sizing: border-box;
   }
+}
+
+#submit {
+  margin-top: 20px;
 }
 
 .timer-btn {
