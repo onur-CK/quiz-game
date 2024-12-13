@@ -281,9 +281,25 @@ button:hover {
   }
 }
 
+.timer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timer-btn span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .correct-scores-btn span,
 .incorrect-scores-btn span,
-.timer-btn span,
 .question-counter-btn span {
   font-size: 1.2rem;
   font-weight: bold;

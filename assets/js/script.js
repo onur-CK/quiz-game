@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('timer-btn').classList.add('hide');
   document.getElementById('questions-area').innerText = 'Welcome to Quickz';
 });
 
@@ -28,9 +29,9 @@ let randomQuestions; //random question holder
 let currentQuestion; 
 let questionAnswered = false;
 let score = 0;
-var sec = 20000; //time for starting the quiz
+var sec = 30; //time for starting the quiz
 var clicks = 0;
-var time = setInterval(qTimer, 1000);
+let time;
 
 
 //event listeners for submit, next, rules and start buttons.
@@ -90,7 +91,6 @@ function nextCurrentQuestion() {
   if (questionAnswered) {
     questionAnswered = false; //resets
     sec = 30; //resets
-    time = setInterval(qTimer, 1000); // timer starts again
   }
   currentQuestion++;
   getToNextQuestion();
@@ -100,8 +100,11 @@ function nextCurrentQuestion() {
 
 
 function runGame () {
+  clearInterval(time);
+  time = setInterval(qTimer, 1000);
   startBtn.classList.add('hide');
   sec = 30;
+  timerShow.classList.remove('hide');
   quickzRules.classList.add('hide');
   resultText.classList.add('hide');
   quickzRulesDiv.classList.add('hide');
@@ -113,7 +116,6 @@ function runGame () {
   correctsShow.classList.remove('hide');
   incorrectsShow.classList.remove('hide');
   qCounterShow.classList.remove('hide');
-  time = setInterval(qTimer, 1000);
   randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0,10); //stores and selects 10 random questions
   currentQuestion = 0;
   clicks += 1; //increments q counter 
