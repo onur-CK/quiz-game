@@ -29,12 +29,13 @@ body{
 .game-area {
   box-sizing: border-box;
   width: 80%;
-  background-color: lightblue; 
+  background-color: #4a90e2; 
   padding: 1%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50px;
   max-width: 500px;
+  color: white;
 }
 
 .game-area1 {
@@ -52,8 +53,8 @@ body{
   text-align: left;
   font-size: 16px;
   padding: 16px;
-  color: red;
-  background-color: white;
+  color: white;
+  background-color: #4caf50;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -66,7 +67,8 @@ body{
   padding: 20px 0;
   border: 2px solid black;
   border-radius: 20px;
-  background-color: orange;
+  background-color: #ff6f00;
+  color: white;
 }
 
 .score-text {
@@ -109,21 +111,33 @@ body{
   font-size: 1.1rem;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
 }
 
-.corrects {
-  color: green;
-  font-weight: bold;
-}
-
+.corrects, 
 .incorrects {
-  color: red;
+  color: white;
   font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .correct-scores-btn,
-.incorrect-scores-btn,
+.incorrect-scores-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  background-color: #388e3c;
+  color: white;
+  border: 2px solid #2c6c2a;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .timer-btn,
 .question-counter-btn {
   display: inline-block;
@@ -137,6 +151,12 @@ body{
   width: 100px;
   height: 80px;
   text-align: center;
+}
+
+.correct-scores-btn:hover,
+.incorrect-scores-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: #333;
 }
 
 .timer,
@@ -160,18 +180,24 @@ button {
   border-radius: 10px;
   border: 2px solid black;
   padding: 10px;
+  color: #333;
 }
 
 button:hover {
-  background-color: lightpink;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #888;
 }
 
 .correct-scores-btn {
-  background-color: green;
+  background-color: #388e3c;
+  color: white;
+  border: 2px solid #2c6c2a;
 }
 
 .incorrect-scores-btn {
-  background-color: red;
+  background-color: #d32f2f;
+  border: 2px solid #9a0007;
 }
 
 .hide {
@@ -241,10 +267,26 @@ button:hover {
   .incorrect-scores-btn,
   .timer-btn,
   .question-counter-btn {
-    width: 30%;
-    height: 30%; 
-    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-sizing: border-box;
   }
+}
+
+.correct-scores-btn span,
+.incorrect-scores-btn span,
+.timer-btn span,
+.question-counter-btn span {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 390px) {
