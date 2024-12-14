@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const timerBtn = document.getElementById('timer-btn');
-  if (timerBtn) {
-    timerBtn.classList.add('hide');
-  }
-  document.getElementById('questions-area').innerText = 'Welcome to Quickz';
+  const letsGoBtn = document.getElementById('lets-go-btn');
+  letsGoBtn.addEventListener('click', function () {
+    runGame();
+  })
 });
 
 
@@ -57,9 +56,9 @@ function showRules () {
 } 
 
 function qTimer() {
-  document.getElementById('timer-btn').innerHTML = `${sec}s seconds to answer.`;
+  document.getElementById('timer-btn').innerHTML = `${sec}s seconds`;
   sec--;
-  if (sec < -1) {
+  if (sec < 0) {
     clearInterval(time);
     timeOutEndOfTheGame();
   }
@@ -103,6 +102,7 @@ function nextCurrentQuestion() {
 
 
 function runGame () {
+  timerShow.classList.remove('hide');
   clearInterval(time);
   time = setInterval(qTimer, 1000);
   startBtn.classList.add('hide');
@@ -115,7 +115,6 @@ function runGame () {
   submit.classList.add('hide');
   userNameLabel.classList.add('hide');  
   introductionMain.classList.add('hide');
-  timerShow.classList.remove('hide');
   correctsShow.classList.remove('hide');
   incorrectsShow.classList.remove('hide');
   qCounterShow.classList.remove('hide');

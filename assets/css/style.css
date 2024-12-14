@@ -114,18 +114,29 @@ body{
   margin: 0 auto;
   font-size: 1.1rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.corrects,
+.incorrects,
+.timer-btn,
+.question-counter-btn {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
 }
 
 .corrects, 
 .incorrects {
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
 }
 
 .correct-scores-btn,
@@ -144,17 +155,17 @@ body{
 
 .timer-btn,
 .question-counter-btn {
-  display: inline-block;
-  font-size: 1rem;
-  background-color: white;
-  width: calc(33.33% - 4px); 
-  border-radius: 6px;
-  border: 2px solid black;
-  box-sizing: border-box; 
-  margin: 0 2px; 
-  width: 100px;
-  height: 80px;
+  flex: 1; /* Eşit genişlik */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
   text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ff6f00;
+  color: red;
+  font-weight: bold;
 }
 
 .correct-scores-btn:hover,
@@ -163,10 +174,15 @@ body{
   border-color: #333;
 }
 
+.question-counter {
+  margin-right: 5px;
+}
+
 .timer,
 .question-counter-btn {
-  color: red;
+  color: black;
   font-size: 1.1rem;
+  background-color: white;
 }
 
 .answer-options {
@@ -184,7 +200,7 @@ button {
   border-radius: 10px;
   border: 2px solid black;
   padding: 10px;
-  color: #333;
+  color: black;
 }
 
 button:hover {
@@ -284,7 +300,12 @@ button:hover {
     border: 2px solid black;
     box-sizing: border-box;
   }
+  .corrects, .incorrects, .timer-btn, .question-counter-btn {
+    width: 100%; /* Tam genişlik kullan */
+    margin-bottom: 10px;
+  }
 }
+
 
 #submit {
   margin-top: 20px;
@@ -295,14 +316,15 @@ button:hover {
   justify-content: center;
   align-items: center;
   width: 150px;
-  height: 100px;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  background-color: white;
 }
 
-.timer-btn span {
+.timer-btn span,
+.question-counter-btn span {
   font-size: 1rem;
   font-weight: bold;
 }
