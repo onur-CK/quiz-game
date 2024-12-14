@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const letsGoBtn = document.getElementById('lets-go-btn');
-  letsGoBtn.addEventListener('click', function () {
-    runGame();
-  })
+  const letsGoBtn = document.getElementById('start-btn');
+  if (letsGoBtn) { // Eğer eleman varsa
+    letsGoBtn.addEventListener('click', function () {
+      runGame();
+    });
+  } else {
+    console.error("Element with ID 'start-btn' not found.");
+  }
 });
 
 
@@ -36,8 +40,7 @@ var clicks = 0;
 let time;
 
 
-//event listeners for submit, next, rules and start buttons.
-startBtn.addEventListener('click', runGame);
+//event listeners for submit, next and rules
 submit.addEventListener('click', playerName);
 nextBtn.addEventListener('click', nextCurrentQuestion);
 quickzRules.addEventListener('click', showRules);
@@ -75,19 +78,18 @@ function reset () {
 }
 
 function playerName() {
-  const enteredUserName = document.getElementById('userName').value;
+  const enteredUserName = userName.value.trim(); 
   if (enteredUserName) {
-    userName = enteredUserName;
+    userNameLabel.innerHTML = `Welcome, ${enteredUserName}!`;
+    userNameLabel.classList.add('welcome-message');
     startBtn.classList.remove('hide');
     submit.classList.add('hide');
     scoreText.classList.add('hide');
-    closeBtn.addEventListener('click', reset);
-    } else {
+  } else {
     scoreText.classList.remove('hide');
-    document.getElementById('score-text').innerHTML = `WOOPS! you didn't enter username. Please enter any username and press submit.`;
+    scoreText.innerHTML = `WOOPS! Please enter a username.`;
   }
 }
-
 
 function nextCurrentQuestion() {
   if (questionAnswered) {
@@ -98,6 +100,8 @@ function nextCurrentQuestion() {
   getToNextQuestion();
   clicks += 1; // increments number of completed questions
   document.getElementById('question-counter').innerHTML = clicks; 
+  clearInterval(time);
+  time = setInterval(qTimer, 1000); 
 }
 
 
@@ -105,8 +109,8 @@ function runGame () {
   timerShow.classList.remove('hide');
   clearInterval(time);
   time = setInterval(qTimer, 1000);
-  startBtn.classList.add('hide');
   sec = 30;
+  startBtn.classList.add('hide');
   timerShow.classList.remove('hide');
   quickzRules.classList.add('hide');
   resultText.classList.add('hide');
