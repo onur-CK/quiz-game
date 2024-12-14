@@ -15,6 +15,21 @@ body{
   min-height: 100vh;
 }
 
+.game-title {
+  background-color: orange; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  text-align: center; /* Ortala */
+  padding: 15px 20px; /* İç boşluk */
+  border-radius: 15px; /* Oval köşeler */
+  border: 3px solid white; /* Kenarlık rengi ve kalınlığı */
+  font-size: 2.5rem; /* Yazı boyutu */
+  font-weight: bold; /* Kalın yazı */
+  margin: 20px auto; /* Üst ve alt boşluk */
+  width: 60%; /* Genişlik */
+  max-width: 600px; /* Maksimum genişlik */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Hafif gölge efekti */
+}
+
 .heading {
   font-size: 2.5em;
   width: 80%;
@@ -59,18 +74,6 @@ body{
   border-radius: 10px;
 }
 
-.questions-container {
-  font-size: 1.5rem;
-  margin: auto;
-  margin-top: 10px;
-  width: 85%;
-  padding: 20px 0;
-  border: 2px solid black;
-  border-radius: 20px;
-  background-color: #ff6f00;
-  color: white;
-}
-
 .score-text {
   color: red;
   font-size: 16px;
@@ -92,12 +95,8 @@ body{
   border-radius: 4px;
 }
 
-.usernameLabel {
-  margin-bottom: 10px;
-}
-
 .introduction,
-.usernameLabel {
+.welcome-message {
   font-size: 18px;
 }
 
@@ -232,24 +231,28 @@ button:hover {
 
 @keyframes glowing {
   0% {
-    background-color: #8eb6eb;
-    box-shadow: 0 0 4px #8eb6eb;
+    background-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
   }
 
   50% {
-    background-color: #c1c5c0;
+    background-color: #388e3c;  
+    box-shadow: 0 0 20px rgba(56, 142, 60, 0.9); 
   }
 
   100% {
-    background-color: #8eb6eb;
-    box-shadow: 0 0 4px #8eb6eb;
+    background-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
   }
 
 }
 
 #quickz-rules {
-  animation: glowing 1200ms infinite;
+  animation: glowing 1500ms infinite;  
   margin-bottom: 20px;
+  color: white;  
+  font-weight: bold;  
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
 }
 
 .ooops {
@@ -342,7 +345,11 @@ button:hover {
   }
 }
 
-
+@media only screen and (min-width: 601px) {
+  .userName {
+    max-width: 80%;  
+  }
+}
 
 
 

@@ -26,7 +26,6 @@ const questionArea = document.getElementById("questions-area");
 const answersArea = document.getElementsByClassName("answer-options")[0];
 const closeBtn = document.getElementById("close-btn");
 let submit = document.getElementById("submit");
-let userNameLabel = document.getElementById("usernameLabel");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
 let resultText = document.getElementById("result-score-text");
@@ -46,6 +45,13 @@ quickzRules.addEventListener("click", showRules);
 
 //function for displaying the rules of the quickz.
 function showRules() {
+  // Hide the questions container
+  const questionCont = document.getElementById("questions-container");
+  if (questionCont) {
+    questionCont.classList.add("hide"); // Hide questions container
+  }
+  
+  // Hide other elements for the rules view
   quickzRules.classList.add("hide");
   introductionMain.classList.add("hide");
   form.classList.add("hide");
@@ -70,9 +76,10 @@ function reset() {
   quickzRulesDiv.classList.add("hide");
   form.classList.remove("hide");
   submit.classList.remove("hide");
-  userNameLabel.classList.remove("hide");
+  userName.classList.remove("hide");
   introductionMain.classList.remove("hide");
 
+  // Hides welcome message
   const welcomeMessageDiv = document.getElementById("welcome-message");
   welcomeMessageDiv.classList.add("hide");
 }
@@ -83,14 +90,18 @@ function playerName() {
     const welcomeMessageDiv = document.getElementById("welcome-message");
     const userNameDisplay = document.getElementById("user-name-display");
 
+    // Places username
     userNameDisplay.textContent = enteredUserName;
 
+    // Displays welcome message
     welcomeMessageDiv.classList.remove("hide");
 
-    userNameLabel.classList.add("hide");
-    startBtn.classList.remove("hide");
+    // Hides submit and score text
     submit.classList.add("hide");
     scoreText.classList.add("hide");
+
+    //displays "Lets Go" button
+    startBtn.classList.remove("hide");
   } else {
     scoreText.classList.remove("hide");
     scoreText.innerHTML = `WOOPS! Please enter a username.`;
@@ -115,14 +126,14 @@ function runGame() {
   clearInterval(time);
   time = setInterval(qTimer, 1000);
   sec = 30;
-  startBtn.classList.add("hide");
+  startBtn.classList.remove("hide");
   timerShow.classList.remove("hide");
   quickzRules.classList.add("hide");
   resultText.classList.add("hide");
   quickzRulesDiv.classList.add("hide");
   form.classList.add("hide");
   submit.classList.add("hide");
-  userNameLabel.classList.add("hide");
+  userName.classList.add("hide");
   introductionMain.classList.add("hide");
   correctsShow.classList.remove("hide");
   incorrectsShow.classList.remove("hide");
@@ -133,6 +144,8 @@ function runGame() {
   document.getElementById("question-counter").innerHTML = clicks;
   questionCont.classList.remove("hide");
   getToNextQuestion();
+  document.getElementById("start-btn").classList.add("hide");
+  document.getElementById("welcome-message").classList.add("hide");
 }
 
 function getToNextQuestion() {
