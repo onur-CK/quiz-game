@@ -89,21 +89,21 @@ function reset() {
 function playerName() {
   const enteredUserName = userName.value.trim();
 
-  // Kullanıcı adı boşsa
+  // If username is empty
   if (!enteredUserName) {
     scoreText.classList.remove("hide");
     scoreText.innerHTML = `WOOPS! Please enter a username.`;
     return;
   }
 
-  // Uzunluk kontrolü
+  // Length control
   if (enteredUserName.length < 2 || enteredUserName.length > 15) {
     scoreText.classList.remove("hide");
     scoreText.innerHTML = `Username must be between 2-15 characters.`;
     return;
   }
 
-  // Özel karakter kontrolü
+  // Special character control
   const specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
   if (specialCharRegex.test(enteredUserName)) {
     scoreText.classList.remove("hide");
@@ -111,21 +111,20 @@ function playerName() {
     return;
   }
 
-  // Kullanıcı adı geçerliyse devam et
+  // Continue if the username is valid
   const welcomeMessageDiv = document.getElementById("welcome-message");
   const userNameDisplay = document.getElementById("user-name-display");
 
-  // Kullanıcı adını yerleştir
+  // Insert username
   userNameDisplay.textContent = enteredUserName;
 
-  // Hoş geldiniz mesajını göster
+  // Display welcome message
   welcomeMessageDiv.classList.remove("hide");
 
-  // Submit butonunu ve hata mesajını gizle
   submit.classList.add("hide");
   scoreText.classList.add("hide");
 
-  // "Let's Go" butonunu göster
+  // Displays "Let's Go" button
   startBtn.classList.remove("hide");
 }
 

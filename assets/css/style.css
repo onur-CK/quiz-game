@@ -65,17 +65,24 @@ body {
 }
 
 .message-box {
-  background-color: #ffeb3b; /* Sarı arka plan */
+  background-color: #ff6f00; /* Sarı arka plan */
   color: #333; /* Koyu yazı rengi */
   font-size: 1.5rem; /* Yazı boyutu */
   font-weight: bold; /* Kalın yazı */
   text-align: center; /* Metni ortala */
+  justify-content: center; /* Yatayda ortala */
+  align-items: center; /* Dikeyde ortala */
   padding: 20px 30px; /* İç boşluk */
   border-radius: 50px; /* Oval kenarlar */
-  border: 2px solid #f57c00; /* Turuncu kenarlık */
+  border: 2px solid #4a90e2; /* Turuncu kenarlık */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
   display: inline-block; /* Mesaj kutusu için */
-  max-width: 80%; /* Genişlik sınırlaması */
+  width: 60%; /* Genişlik sınırlaması */
+  height: 150px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  display: flex;
 }
 
 
