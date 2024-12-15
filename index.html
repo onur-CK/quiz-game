@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="General quiz game.">
-  <meta name="keywords" content="quiz, history, technology, general knowledge, geography">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Quickz</title>
-  
-</head>
-<body>
-  <!-- Main content section(game area) for quickz -->
-  <div class="game-area">
-    <h1 class="game-title">QUICKZ</h1>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="General quiz game." />
+    <meta
+      name="keywords"
+      content="quiz, history, technology, general knowledge, geography"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Quickz</title>
+  </head>
+  <body>
+    <!-- Main content section(game area) for quickz -->
+    <div class="game-area">
+      <h1 class="game-title">QUICKZ</h1>
+
       <!-- Question area -->
       <div id="questions-container" class="questions-container">
         <div id="questions-area"></div>
       </div>
-      
-      
+
       <!-- Rules and submit area-->
       <div class="game-area btn-flex">
         <p id="introduction" class="introduction">
-          Would you like to test your knowledge? <br> Take this quickz to find out!
+          Would you like to test your knowledge? <br />
+          Take this quickz to find out!
         </p>
-        
+
         <!-- The quickz interface, button to display the quickz rules, and a form to collect the user's name to start the quickz -->
         <button id="quickz-rules" class="btn">Rules</button>
         <form id="form">
-          <input type="text" id="userName" autocomplete="off" class="userName" name="uname" placeholder="Enter your name" required>
+          <input
+            type="text"
+            id="userName"
+            autocomplete="off"
+            class="userName"
+            name="uname"
+            placeholder="Enter your name"
+            required
+            minlength="2"
+            maxlength="15"
+            pattern="[A-Za-z0-9]+"
+            title="Username must be 2-15 characters long, no spaces or special characters"
+          />
           <button type="button" id="submit" class="btn">Submit</button>
         </form>
 
-      <div id="welcome-message" class="hide"> 
-        <p>Welcome, <span id="user-name-display"></span>!</p>
+        <div id="welcome-message" class="hide">
+          <p>Welcome, <span id="user-name-display"></span>!</p>
+        </div>
+
+        <!-- Quickz rules -->
+        <div id="quickz-rules-info" class="quickz-rules-info hide">
+          <h2>Quickz rules</h2>
+          <p>
+            1- Enter your name and press "Let's Go" to begin. <br />
+            2- You have 30 seconds for each questions. <br />
+            3- When timer ends, it's game over. <br />
+            4- Once you click an answer you can't change it. <br />
+            5- Answer all 10 questions to finish the Quickz. <br />
+          </p>
+          <button id="close-btn" class="btn">Close</button>
+        </div>
+        <p id="result-score-text" class="result-score-text hide"></p>
       </div>
-     
-      <!-- Quickz rules -->
-      <div id="quickz-rules-info" class="quickz-rules-info hide">
-        <h2>Quickz rules</h2>
-        <p>
-          1- Enter your name and press "Let's Go" to begin. <br>
-          2- You have 30 seconds for each questions. <br>
-          3- When timer ends, it's game over. <br>
-          4- Once you click an answer you can't change it. <br>
-          5- Answer all 10 questions to finish the Quickz. <br>
-        </p>
-      <button id="close-btn" class="btn">Close</button>
-      </div>  
-      <p id="result-score-text" class="result-score-text hide"></p>
-      </div>
-      
+
       <!-- Answer area -->
       <div class="answer-options btn">
         <p id="score-text" class="hide"></p>
@@ -70,14 +84,21 @@
 
       <!-- Score area -->
       <div class="score-area">
-        <p class="correct-scores-btn hide" id="correct-scores-btn">Correct Answers: <span id="corrects" class="corrects">0</span></p>
-        <p class="incorrect-scores-btn hide" id="incorrect-scores-btn">Incorrect Answers: <span id="incorrects" class="incorrects">0</span></p>
-        <button id="timer-btn" class="timer-btn hide"><span id="timer"></span></button>
-        <button id="question-counter-btn" class="question-counter-btn hide"><span id="question-counter" class="question-counter">0 </span> of 10</button>
+        <p class="correct-scores-btn hide" id="correct-scores-btn">
+          Correct Answers: <span id="corrects" class="corrects">0</span>
+        </p>
+        <p class="incorrect-scores-btn hide" id="incorrect-scores-btn">
+          Incorrect Answers: <span id="incorrects" class="incorrects">0</span>
+        </p>
+        <button id="timer-btn" class="timer-btn hide">
+          <span id="timer"></span>
+        </button>
+        <button id="question-counter-btn" class="question-counter-btn hide">
+          <span id="question-counter" class="question-counter">0 </span> of 10
+        </button>
       </div>
-  
-</div>
-<script src="assets/js/script.js"></script>
-<script src="assets/js/questions.js"></script>
-</body>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/questions.js"></script>
+  </body>
 </html>
