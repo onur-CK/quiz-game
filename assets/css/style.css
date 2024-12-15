@@ -55,15 +55,33 @@ body {
 }
 
 .game-area1 {
-  box-sizing: border-box;
-  width: 80%;
-  background-color: white; 
-  padding: 1%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50px;
-  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9; /* Açık gri arka plan */
+  padding: 20px;
+  min-height: 300px;
+  border-radius: 20px;
+  border: 2px solid #4a90e2; /* Hafif mavi kenarlık */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  text-align: center;
 }
+
+.message-box {
+  background-color: #ffeb3b; /* Sarı arka plan */
+  color: #333; /* Koyu yazı rengi */
+  font-size: 1.5rem; /* Yazı boyutu */
+  font-weight: bold; /* Kalın yazı */
+  text-align: center; /* Metni ortala */
+  padding: 20px 30px; /* İç boşluk */
+  border-radius: 50px; /* Oval kenarlar */
+  border: 2px solid #f57c00; /* Turuncu kenarlık */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+  display: inline-block; /* Mesaj kutusu için */
+  max-width: 80%; /* Genişlik sınırlaması */
+}
+
 
 .quickz-rules-info {
   text-align: left;
@@ -271,9 +289,19 @@ button:hover {
   margin-top: 22px;
 }
 
-.input-nav-restart {
-  font-size: 30px;
-  margin-top: 50px;
+.input-nav-restart a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #4a90e2; /* Mavi buton */
+  color: #fff; /* Beyaz yazı */
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.input-nav-restart a:hover {
+  background-color: #357ABD; /* Hover durumu için koyu mavi */
 }
 
 .btn.correct {
@@ -318,7 +346,6 @@ button:hover {
 }
 
 .timer-btn {
-  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
