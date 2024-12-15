@@ -63,11 +63,13 @@ function showRules() {
 
 function qTimer() {
   timerShow.innerHTML = `${sec}s seconds`;
-  sec--;
+  
   if (sec < 0) {
     clearInterval(time);
     timeOutEndOfTheGame();
+    return;
   }
+  sec--;
 }
 
 function reset() {
@@ -149,7 +151,7 @@ function getToNextQuestion() {
 
   clearInterval(time);
   sec = 30;
-  timerShow.innerHTML = `${sec}s seconds`;
+  qTimer();
   time = setInterval(qTimer, 1000);
 }
 
