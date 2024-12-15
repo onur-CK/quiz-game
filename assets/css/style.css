@@ -2,11 +2,12 @@
 
 
 /* Center content both horizontally and vertically */
-body{
+/* Genel Ayarlar */
+body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
-  background-color:white;
+  background-color: #f5f5f5; /* Hafif gri arka plan */
   text-align: center;
   margin-top: 200px;
   max-width: 3000px;
@@ -16,18 +17,18 @@ body{
 }
 
 .game-title {
-  background-color: orange; /* Arka plan rengi */
-  color: white; /* Yazı rengi */
-  text-align: center; /* Ortala */
-  padding: 15px 20px; /* İç boşluk */
-  border-radius: 15px; /* Oval köşeler */
-  border: 3px solid white; /* Kenarlık rengi ve kalınlığı */
-  font-size: 2.5rem; /* Yazı boyutu */
-  font-weight: bold; /* Kalın yazı */
-  margin: 20px auto; /* Üst ve alt boşluk */
-  width: 60%; /* Genişlik */
-  max-width: 600px; /* Maksimum genişlik */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Hafif gölge efekti */
+  background-color: #ff6f00; /* Turuncu */
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 3px solid white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px auto;
+  width: 60%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .heading {
@@ -69,7 +70,7 @@ body{
   font-size: 16px;
   padding: 16px;
   color: white;
-  background-color: #4caf50;
+  background-color: #388e3c; /* Yeşil */
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -89,9 +90,9 @@ body{
   text-align: left;
   font-size: 16px;
   padding: 15px;
-  color: blue;
-  background: pink;
-  border: 2px solid black; 
+  color: #212121; /* Koyu gri metin rengi */
+  background: #ffffff; /* Beyaz arka plan */
+  border: 2px solid #212121; /* Koyu gri sınır */
   border-radius: 4px;
 }
 
@@ -102,11 +103,13 @@ body{
 
 .userName {
   font-size: 1.5rem;
-  border: 2px solid black;
+  border: 2px solid #b0bec5; /* Hafif gri kenarlık */
   border-radius: 20px;
   padding: 14px;
   text-align: center;
   margin-bottom: 20px;
+  background-color: #ffffff; /* Beyaz arka plan */
+  color: #424242; /* Koyu gri metin rengi */
 }
 
 .score-area {
@@ -154,7 +157,7 @@ body{
 
 .timer-btn,
 .question-counter-btn {
-  flex: 1; /* Eşit genişlik */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -315,6 +318,7 @@ button:hover {
 }
 
 .timer-btn {
+  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

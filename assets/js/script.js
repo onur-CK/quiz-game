@@ -62,7 +62,7 @@ function showRules() {
 }
 
 function qTimer() {
-  document.getElementById("timer-btn").innerHTML = `${sec}s seconds`;
+  timerShow.innerHTML = `${sec}s seconds`;
   sec--;
   if (sec < 0) {
     clearInterval(time);
@@ -117,15 +117,10 @@ function nextCurrentQuestion() {
   getToNextQuestion();
   clicks += 1; // increments number of completed questions
   document.getElementById("question-counter").innerHTML = clicks;
-  clearInterval(time);
-  time = setInterval(qTimer, 1000);
 }
 
 function runGame() {
   timerShow.classList.remove("hide");
-  clearInterval(time);
-  time = setInterval(qTimer, 1000);
-  sec = 30;
   startBtn.classList.remove("hide");
   timerShow.classList.remove("hide");
   quickzRules.classList.add("hide");
@@ -151,6 +146,11 @@ function runGame() {
 function getToNextQuestion() {
   defaultState();
   displayQuestion(randomQuestions[currentQuestion]);
+
+  clearInterval(time);
+  sec = 30;
+  timerShow.innerHTML = `${sec}s seconds`;
+  time = setInterval(qTimer, 1000);
 }
 
 //gets the questions and answers to display
