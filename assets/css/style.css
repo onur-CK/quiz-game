@@ -83,6 +83,10 @@ body {
   margin: 0 auto;
   color: white;
   display: flex;
+  position: fixed; /* Sabitle */
+  top: 30%; /* Sayfanın üstünden %30 boşluk bırak */
+  left: 50%; /* Sayfanın ortasına hizala */
+  transform: translate(-50%, -50%); /* Tam merkezi hizala */
 }
 
 
@@ -301,6 +305,10 @@ button:hover {
   border-radius: 10px;
   font-weight: bold;
   margin-top: 20px;
+  position: fixed; /* Sabitle */
+  top: 40%; /* Restart butonunu pencerenin altında konumlandır */
+  left: 50%; /* Ortala */
+  transform: translate(-50%, -50%); /* Tam merkezi hizala */
 }
 
 .input-nav-restart a:hover {
