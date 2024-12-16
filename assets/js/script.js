@@ -152,24 +152,31 @@ function updateQuestionState() {
 }
 
 function runGame() {
-  timerShow.classList.remove("hide");
-  startBtn.classList.remove("hide");
-  quickzRules.classList.add("hide");
-  resultText.classList.add("hide");
-  quickzRulesDiv.classList.add("hide");
-  form.classList.add("hide");
-  submit.classList.add("hide");
-  userName.classList.add("hide");
-  introductionMain.classList.add("hide");
-  correctsShow.classList.remove("hide");
-  incorrectsShow.classList.remove("hide");
-  qCounterShow.classList.remove("hide");
-  randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0, 10); //stores and selects 10 random questions
+  // Define all the elements
+  const elementsToHide = [
+    quickzRules, resultText, quickzRulesDiv, form, submit, userName, introductionMain
+  ];
+
+  const elementsToShow = [
+    timerShow, startBtn, correctsShow, incorrectsShow, qCounterShow, questionCont
+  ];
+
+  // Hide the elements
+  elementsToHide.forEach(element => element.classList.add("hide"));
+
+  // Show the elements
+  elementsToShow.forEach(element => element.classList.remove("hide"));
+
+  // Initialize the game state
+  randomQuestions = questions.sort(() => 0.5 - Math.random()).slice(0, 10); // Randomly selects 10 questions
   currentQuestion = 0;
-  clicks += 1; //increments q counter
-  document.getElementById("question-counter").innerHTML = clicks;
-  questionCont.classList.remove("hide");
+  clicks += 1; // Increment question counter
+  document.getElementById("question-counter").innerHTML = clicks; // Update question counter display
+
+  // Start the first question
   getToNextQuestion();
+
+  // Hide start button and welcome message
   document.getElementById("start-btn").classList.add("hide");
   document.getElementById("welcome-message").classList.add("hide");
 }
