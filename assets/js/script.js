@@ -247,6 +247,8 @@ function endScore() {
   resultText.classList.remove("hide");
   restartBtn.classList.add("hide");
 
+  const userName = document.getElementById('userName').value;
+
   if (score >= 8) {
     document.getElementById(
       "result-score-text"
