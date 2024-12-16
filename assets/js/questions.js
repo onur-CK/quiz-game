@@ -191,10 +191,10 @@ const questions = [
   {
     question: "What does NASA stand for?",
     answers: [
-      { text: "North American Satellite Association", correct: false},
-      { text: "National Aeronautics and Space Administration", correct: true},
-      { text: "National Association of Space Astronauts", correct: false},
-      { text: "National American Space Association", correct: false},
+      { text: "North American Sat. Ass.", correct: false},
+      { text: "Nat. Aeronautics and Space Adm.", correct: true},
+      { text: "Nat. Ass. of Space Astronauts", correct: false},
+      { text: "Nat. American Space Ass.", correct: false},
     ]
   },
   {
