@@ -192,17 +192,28 @@ function getToNextQuestion() {
 
 //gets the questions and answers to display
 function displayQuestion(question) {
+  // Set question text
   questionArea.innerText = question.question;
-  question.answers.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("btn");
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", checkAnswer);
-    answersArea.appendChild(button);
-  });
+
+  // Create and append answer buttons
+  question.answers.forEach(createAnswerButton);
+}
+
+function createAnswerButton(answer) {
+  const button = document.createElement("button");
+  button.innerText = answer.text;
+  button.classList.add("btn");
+
+  // Assign correct answer data attribute
+  if (answer.correct) {
+    button.dataset.correct = "true";
+  }
+
+  // Attach the click event listener
+  button.addEventListener("click", checkAnswer);
+
+  // Append the button to the answers container
+  answersArea.appendChild(button);
 }
 
 function defaultState() {
