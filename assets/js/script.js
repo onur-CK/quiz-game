@@ -166,7 +166,6 @@ function runGame() {
 function getToNextQuestion() {
   defaultState();
   displayQuestion(randomQuestions[currentQuestion]);
-
   clearInterval(time);
   sec = 30;
   qTimer();
