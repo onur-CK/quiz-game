@@ -72,18 +72,22 @@ function qTimer() {
   sec--;
 }
 
-function reset() {
-  quickzRules.classList.remove("hide");
-  resultText.classList.add("hide");
-  quickzRulesDiv.classList.add("hide");
-  form.classList.remove("hide");
-  submit.classList.remove("hide");
-  userName.classList.remove("hide");
-  introductionMain.classList.remove("hide");
 
-  // Hides welcome message
-  const welcomeMessageDiv = document.getElementById("welcome-message");
-  welcomeMessageDiv.classList.add("hide");
+function reset() {
+  // List of elements to hide and show
+  const elementsToHide = [
+    resultText, quickzRulesDiv, welcomeMessageDiv
+  ];
+
+  const elementsToShow = [
+    quickzRules, form, submit, userName, introductionMain
+  ];
+
+  // Hide the elements
+  elementsToHide.forEach(element => element.classList.add("hide"));
+
+  // Show the elements
+  elementsToShow.forEach(element => element.classList.remove("hide"));
 }
 
 function playerName() {
@@ -129,20 +133,26 @@ function playerName() {
 }
 
 function nextCurrentQuestion() {
+  // Reset question state if answered
   if (questionAnswered) {
-    questionAnswered = false; //resets
-    sec = 30; //resets
+    questionAnswered = false;
+    sec = 30; // Reset the timer
   }
+
+  // Move to the next question and update UI
+  updateQuestionState();
+}
+
+function updateQuestionState() {
   currentQuestion++;
-  getToNextQuestion();
-  clicks += 1; // increments number of completed questions
+  clicks++;
   document.getElementById("question-counter").innerHTML = clicks;
+  getToNextQuestion();
 }
 
 function runGame() {
   timerShow.classList.remove("hide");
   startBtn.classList.remove("hide");
-  timerShow.classList.remove("hide");
   quickzRules.classList.add("hide");
   resultText.classList.add("hide");
   quickzRulesDiv.classList.add("hide");
