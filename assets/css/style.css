@@ -14,6 +14,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
 }
 
 .game-title {
@@ -89,6 +92,30 @@ body {
   transform: translate(-50%, -50%); /* Tam merkezi hizala */
 }
 
+.quickz-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  min-height: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.questions-container2 {
+  background-color: #ff6f00; /* Arka plan rengi */
+  color: white;              /* Yazı rengi */
+  font-size: 1.5rem;         /* Yazı boyutu */
+  font-weight: bold;         /* Kalın yazı */
+  padding: 20px 30px;        /* İç boşluk */
+  border-radius: 20px;       /* Kenarları yuvarla */
+  margin-bottom: 40px;       /* Buton ile mesaj arasına boşluk */
+  max-width: 500px;          /* Mesaj kutusunun genişliği */
+  width: 90%;                /* Mesaj kutusunun genişliği */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
+}
 
 .quickz-rules-info {
   text-align: left;
@@ -296,19 +323,22 @@ button:hover {
   margin-top: 22px;
 }
 
+.input-nav-restart {
+  display: flex;           /* Flexbox kullanarak hizalama */
+  justify-content: center; /* Butonu yatayda ortalar */
+  align-items: center;     /* Butonu dikeyde ortalar */
+  width: 100%;             /* Kapsayıcıyı tam genişlikte yap */
+}
+
 .input-nav-restart a {
-  display: inline-block;
-  text-decoration: none;
-  background-color: #4a90e2; /* Mavi buton */
-  color: #fff; /* Beyaz yazı */
+  background-color: #4a90e2;
+  color: white;
   padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-top: 20px;
-  position: fixed; /* Sabitle */
-  top: 40%; /* Restart butonunu pencerenin altında konumlandır */
-  left: 50%; /* Ortala */
-  transform: translate(-50%, -50%); /* Tam merkezi hizala */
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;      /* Buton metnini ortalar */
 }
 
 .input-nav-restart a:hover {
@@ -317,10 +347,12 @@ button:hover {
 
 .btn.correct {
   background-color: #388e3c;
+  color: white;
 }
 
 .btn.wrong {
   background-color: #d32f2f;
+  color: white;
 }
 
 
