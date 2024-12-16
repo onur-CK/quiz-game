@@ -359,30 +359,19 @@ button:hover {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .userName {
-    max-width: 60%;
-  } 
-  .correct-scores-btn,
-  .incorrect-scores-btn,
-  .timer-btn,
+    max-width: 80%; /* Daha geniş bir alan */
+    font-size: 16px;
+    text-align: center; /* Ortalanmış */
+    margin-bottom: 15px;
+  }
+  .timer-btn, 
   .question-counter-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8rem;
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    border: 2px solid black;
-    box-sizing: border-box;
+    font-size: 14px;
   }
-  .corrects, .incorrects, .timer-btn, .question-counter-btn {
-    width: 100%; /* Tam genişlik kullan */
-    margin-bottom: 10px;
-  }
+  .question-counter.question-counter {
+    font-size: 14px;
+   }
 }
-
 
 #submit {
   margin-top: 20px;
@@ -417,6 +406,13 @@ button:hover {
   .heading {
     font-size: 20px;
   }
+  .userName {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .start-btn {
+    margin-bottom: 30px;
+   }
 }
 
 @media only screen and (min-width: 601px) {
