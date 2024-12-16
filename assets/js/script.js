@@ -235,38 +235,35 @@ function checkAnswer(event) {
   }
 }
 
-function endScore() {
-  // Hide elements and display result based on score
-  incorrectsShow.classList.add("hide");
-  correctsShow.classList.add("hide");
-  answersArea.classList.add("hide");
-  qCounterShow.classList.add("hide");
-  timerShow.classList.add("hide");
-  questionCont.classList.add("hide");
-  resultText.classList.remove("hide");
-  restartBtn.classList.add("hide");
-
-  const userName = document.getElementById('userName').value;
-
+function generateResultMessage(score, userName) {
   if (score >= 8) {
-    document.getElementById(
-      "result-score-text"
-    ).innerHTML = `Awesome!! ${userName}. Your score is ${score} out of 10.`;
-  } else if (score >= 6 && score < 8) {
-    document.getElementById(
-      "result-score-text"
-    ).innerHTML = `Well Done! ${userName}. Your score is ${score} out of 10.`;
-  } else if (score >= 4 && score < 6) {
-    document.getElementById(
-      "result-score-text"
-    ).innerHTML = `Congratulations! ${userName}. Your score is ${score} out of 10.`;
+    return `Awesome!! ${userName}. Your score is ${score} out of 10.`;
+  } else if (score >= 6) {
+    return `Well Done! ${userName}. Your score is ${score} out of 10.`;
+  } else if (score >= 4) {
+    return `Congratulations! ${userName}. Your score is ${score} out of 10.`;
   } else {
-    document.getElementById(
-      "result-score-text"
-    ).innerHTML = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
+    return `Nice Try! ${userName}. Your score is ${score} out of 10.`;
   }
+}
 
-  // Redirect to the game over page after a delay
+// Hide all elements and show the result
+function endScore() {
+  const elementsToHide = [
+    incorrectsShow, correctsShow, answersArea,
+    qCounterShow, timerShow, questionCont, restartBtn
+  ];
+  
+  elementsToHide.forEach(element => element.classList.add("hide"));
+  
+  const resultTextElement = document.getElementById("result-score-text");
+  const userName = document.getElementById('userName').value;
+  
+  resultTextElement.innerHTML = generateResultMessage(score, userName);
+  
+  resultText.classList.remove("hide");
+
+  // Redirect after a delay
   setTimeout(gameOver, 8000);
 }
 
