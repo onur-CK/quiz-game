@@ -75,6 +75,7 @@ function qTimer() {
 
 function reset() {
   // List of elements to hide and show
+  const welcomeMessageDiv = document.getElementById("welcome-message");
   const elementsToHide = [
     resultText, quickzRulesDiv, welcomeMessageDiv
   ];
