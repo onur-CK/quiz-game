@@ -31,6 +31,8 @@ const rulesSound = new Audio("assets/sounds/rules.mp3");
 const submitSound = new Audio("assets/sounds/submit.mp3");
 const correctSound = new Audio("assets/sounds/correct.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
+const timeoutSound = new Audio("assets/sounds/timeout.mp3");
+const finishSound = new Audio("assets/sounds/finish.mp3");
 let submit = document.getElementById("submit");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
@@ -292,6 +294,7 @@ function prepareForGameEnd() {
 }
 
 function generateResultMessage(score, userName) {
+  finishSound.play();
   if (score >= 8) {
     return `Awesome!! ${userName}. Your score is ${score} out of 10.`;
   } else if (score >= 6) {
@@ -347,6 +350,7 @@ function updateScore(scoreType) {
 
 function timeOutEndOfTheGame() {
   // Mesajı güncelle
+  timeoutSound.play();
   const questionArea = document.getElementById("questions-area");
   questionArea.innerHTML = `<strong><em>Unfortunately, time is up!</em></strong> <br>`;
 
