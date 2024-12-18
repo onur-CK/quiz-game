@@ -218,9 +218,7 @@ function createAnswerButton(answer) {
 
 function defaultState() {
   nextBtn.classList.add("hide");
-  while (answersArea.firstChild) {
-    answersArea.removeChild(answersArea.firstChild);
-  }
+  answersArea.innerHTML = "";
 }
 
 function checkAnswer(event) {
