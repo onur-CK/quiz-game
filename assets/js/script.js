@@ -25,6 +25,7 @@ const questionCont = document.getElementById("questions-container");
 const questionArea = document.getElementById("questions-area");
 const answersArea = document.getElementsByClassName("answer-options")[0];
 const closeBtn = document.getElementById("close-btn");
+const rulesSound = new Audio("sounds/rules.mp3");
 let submit = document.getElementById("submit");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
@@ -45,6 +46,8 @@ quickzRules.addEventListener("click", showRules);
 
 //function for displaying the rules of the quickz.
 function showRules() {
+  rulesSound.play();
+  
   // Hide the questions container
   const questionCont = document.getElementById("questions-container");
   if (questionCont) {
