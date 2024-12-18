@@ -29,6 +29,8 @@ const answersArea = document.getElementsByClassName("answer-options")[0];
 const closeBtn = document.getElementById("close-btn");
 const rulesSound = new Audio("assets/sounds/rules.mp3");
 const submitSound = new Audio("assets/sounds/submit.mp3");
+const correctSound = new Audio("assets/sounds/correct.mp3");
+const wrongSound = new Audio("assets/sounds/wrong.mp3");
 let submit = document.getElementById("submit");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
@@ -239,9 +241,11 @@ function checkAnswer(event) {
 
   // Update the score based on the answer
   if (isCorrect) {
+    correctSound.play();
     score++;
     incrementCorrectAnswer();
   } else {
+    wrongSound.play();
     incrementWrongAnswer();
   }
 
