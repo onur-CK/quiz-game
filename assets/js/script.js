@@ -225,43 +225,59 @@ function defaultState() {
 
 function checkAnswer(event) {
   const clickedButton = event.target;
-  const correct = clickedButton.dataset.correct;
+  const isCorrect = clickedButton.dataset.correct === "true";
 
-  // Add a class to mark this button as answered
-  if (!clickedButton.classList.contains("answered")) {
-    clickedButton.classList.add("answered");
-  }
+  // Mark the button as answered
+  clickedButton.classList.add("answered");
 
-  // Check if the answer is correct
-  if (correct) {
-    // Increment the score and track correct answers
+  // Update the score based on the answer
+  if (isCorrect) {
     score++;
     incrementCorrectAnswer();
   } else {
-    // Track incorrect answers
     incrementWrongAnswer();
   }
 
-  // Stop the timer and indicate that the question is answered
+  // Stop the timer and indicate question is answered
   clearInterval(time);
   questionAnswered = true;
 
-  // Set status class for the clicked button and remove event listener
-  setStatusClass(document.body, correct);
-  Array.from(answersArea.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct);
-    button.removeEventListener("click", checkAnswer);
-  });
+  // Update the button and body classes to reflect answer status
+  updateAnswerStatus(clickedButton, isCorrect);
 
-  // Check if there are more questions remaining
-  if (randomQuestions.length > currentQuestion + 1) {
+  // Disable further clicks on answer buttons
+  disableAnswerButtons();
+
+  // Check if there are more questions, otherwise show result
+  if (hasMoreQuestions()) {
     nextBtn.classList.remove("hide");
   } else {
-    // If no more questions, display the result after a delay
-    sec = 30;
-    timerShow.classList.add("hide");
-    setTimeout(endScore, 3000);
+    prepareForGameEnd();
   }
+}
+
+function updateAnswerStatus(button, isCorrect) {
+  setStatusClass(button, isCorrect);
+  Array.from(answersArea.children).forEach((btn) => {
+    setStatusClass(btn, btn.dataset.correct === "true");
+    btn.removeEventListener("click", checkAnswer);
+  });
+}
+
+function disableAnswerButtons() {
+  Array.from(answersArea.children).forEach((btn) => {
+    btn.disabled = true; // Disable all buttons to prevent further interaction
+  });
+}
+
+function hasMoreQuestions() {
+  return randomQuestions.length > currentQuestion + 1;
+}
+
+function prepareForGameEnd() {
+  sec = 30;
+  timerShow.classList.add("hide");
+  setTimeout(endScore, 3000);
 }
 
 function generateResultMessage(score, userName) {
