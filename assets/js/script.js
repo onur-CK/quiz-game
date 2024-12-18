@@ -322,13 +322,16 @@ function clearStatusClass(element) {
 }
 
 function incrementCorrectAnswer() {
-  let oldScore = parseInt(document.getElementById("corrects").innerText);
-  document.getElementById("corrects").innerText = oldScore + 1;
+  updateScore("corrects");
 }
 
 function incrementWrongAnswer() {
-  let oldScore = parseInt(document.getElementById("incorrects").innerText);
-  document.getElementById("incorrects").innerText = oldScore + 1;
+  updateScore("incorrects");
+}
+
+function updateScore(scoreType) {
+  const scoreElement = document.getElementById(scoreType);
+  scoreElement.innerText = parseInt(scoreElement.innerText) + 1 || 1;
 }
 
 function timeOutEndOfTheGame() {
