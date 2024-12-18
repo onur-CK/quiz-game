@@ -10,30 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const buttons = {
-  start: document.getElementById("start-btn"),
-  next: document.getElementById("next-btn"),
-  restart: document.getElementById("restart-btn"),
-  close: document.getElementById("close-btn"),
-  submit: document.getElementById("submit"),
-};
-
-const uiElements = {
-  timer: document.getElementById("timer-btn"),
-  correctScores: document.getElementById("correct-scores-btn"),
-  incorrectScores: document.getElementById("incorrect-scores-btn"),
-  questionCounter: document.getElementById("question-counter-btn"),
-  quickzRules: document.getElementById("quickz-rules"),
-  quickzRulesInfo: document.getElementById("quickz-rules-info"),
-  introduction: document.getElementById("introduction"),
-  questionsContainer: document.getElementById("questions-container"),
-  questionsArea: document.getElementById("questions-area"),
-  answersArea: document.getElementsByClassName("answer-options")[0],
-  form: document.getElementById("form"),
-  resultScoreText: document.getElementById("result-score-text"),
-  scoreText: document.getElementById("score-text"),
-};
-
 //variables
 const startBtn = document.getElementById("start-btn");
 const nextBtn = document.getElementById("next-btn");
