@@ -335,18 +335,33 @@ function updateScore(scoreType) {
 }
 
 function timeOutEndOfTheGame() {
-  document.getElementById(
-    "questions-area"
-  ).innerHTML = `<strong><em>Unfortunately, time is up!</em></strong> <br>`;
-  timerShow.classList.add("hide");
-  answersArea.classList.add("hide");
-  correctsShow.classList.add("hide");
-  incorrectsShow.classList.add("hide");
-  qCounterShow.classList.add("hide");
-  quickzRules.classList.add("hide");
-  introductionMain.classList.add("hide");
-  form.classList.add("hide");
-  resultText.classList.add("hide");
+  // Mesajı güncelle
+  const questionArea = document.getElementById("questions-area");
+  questionArea.innerHTML = `<strong><em>Unfortunately, time is up!</em></strong> <br>`;
+
+  // Gizlenecek diğer öğeleri belirle
+  const elementsToHide = [
+    "timer-btn",
+    "answer-options",
+    "correct-scores-btn",
+    "incorrect-scores-btn",
+    "question-counter-btn",
+    "quickz-rules",
+    "introduction",
+    "form",
+    "result-score-text"
+  ];
+
+  // Belirtilen elementleri gizle
+  elementsToHide.forEach((id) => {
+    const element = document.getElementById(id) || document.getElementsByClassName(id)[0];
+    if (element) element.classList.add("hide");
+  });
+
+  // `questions-area` gizlenmiyor, mesaj görüntüleniyor
+  questionArea.classList.remove("hide");
+
+  // Belirli bir süre sonra yeniden başlat
   setTimeout(restart, 7000);
 }
 
