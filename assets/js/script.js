@@ -1,8 +1,10 @@
+const letsGoSound = new Audio("assets/sounds/letsgo.mp3");
 document.addEventListener("DOMContentLoaded", function () {
   const letsGoBtn = document.getElementById("start-btn");
   if (letsGoBtn) {
     // Eğer eleman varsa
     letsGoBtn.addEventListener("click", function () {
+      letsGoSound.play();
       runGame();
     });
   } else {
@@ -26,7 +28,7 @@ const questionArea = document.getElementById("questions-area");
 const answersArea = document.getElementsByClassName("answer-options")[0];
 const closeBtn = document.getElementById("close-btn");
 const rulesSound = new Audio("assets/sounds/rules.mp3");
-const submitSound = new Audio("assets/sounds/submit.mp3")
+const submitSound = new Audio("assets/sounds/submit.mp3");
 let submit = document.getElementById("submit");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
