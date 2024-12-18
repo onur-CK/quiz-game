@@ -10,6 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+const buttons = {
+  start: document.getElementById("start-btn"),
+  next: document.getElementById("next-btn"),
+  restart: document.getElementById("restart-btn"),
+  close: document.getElementById("close-btn"),
+  submit: document.getElementById("submit"),
+};
+
 //variables
 const startBtn = document.getElementById("start-btn");
 const nextBtn = document.getElementById("next-btn");
