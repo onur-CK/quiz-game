@@ -299,6 +299,13 @@ function generateResultMessage(score, userName) {
   // Get highestscore from loval storage
   let highestScore = localStorage.getItem("highestScore") || 0;
   
+  // Update if the new score is higher
+  if (score > highestScore) {
+    highestScore = score;
+    localStorage.setItem("highestScore", highestScore);
+  }
+
+  // Create result message
   if (score >= 8) {
     return `Awesome!! ${userName}. Your score is ${score} out of 10.`;
   } else if (score >= 6) {
