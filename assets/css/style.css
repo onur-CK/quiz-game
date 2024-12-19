@@ -23,9 +23,28 @@ body.dark-mode {
   color: #ffffff;
 }
 
+body.dark-mode .userName {
+  background-color: #000;
+  color: #ffffff; 
+  border: 2px solid #444; 
+}
+
+body.dark-mode #submit {
+  background-color: #000; 
+  color: #ffffff; 
+  border: 2px solid #444; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 body.light-mode {
   background-color: #ffffff;
   color: #121212;
+}
+
+body.dark-mode #close-btn {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #444;
 }
 
 .game-title {
@@ -45,7 +64,8 @@ body.light-mode {
 }
 
 .theme-toggle {
-  margin-left: 400px;
+  margin-left: 420px;
+  margin-top: 5px;
 }
 
 .heading {
@@ -175,7 +195,7 @@ body.light-mode {
   text-align: center;
   margin-bottom: 20px;
   background-color: #ffffff;
-  color: #424242;
+  color: black;
 }
 
 .score-area {
