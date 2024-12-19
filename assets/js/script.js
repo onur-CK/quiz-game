@@ -295,6 +295,10 @@ function prepareForGameEnd() {
 
 function generateResultMessage(score, userName) {
   finishSound.play();
+  
+  // Get highestscore from loval storage
+  let highestScore = localStorage.getItem("highestScore") || 0;
+  
   if (score >= 8) {
     return `Awesome!! ${userName}. Your score is ${score} out of 10.`;
   } else if (score >= 6) {
