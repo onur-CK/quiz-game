@@ -71,6 +71,7 @@ const correctSound = new Audio("assets/sounds/correct.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
 const timeoutSound = new Audio("assets/sounds/timeout.mp3");
 const finishSound = new Audio("assets/sounds/finish.mp3");
+const closeSound = new Audio("assets/sounds/close.mp3");
 let submit = document.getElementById("submit");
 let userName = document.getElementById("userName");
 const form = document.getElementById("form");
@@ -109,7 +110,10 @@ function showRules() {
   quickzRulesDiv.classList.remove("hide");
   submit.classList.remove("hide");
   userName.classList.remove("hide");
-  closeBtn.addEventListener("click", reset);
+  closeBtn.addEventListener("click", function () {
+    closeSound.play();
+    reset();
+  });
 }
 
 function qTimer() {
