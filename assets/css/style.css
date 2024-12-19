@@ -96,13 +96,12 @@ body.light-mode {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   display: inline-block;
   width: 60%;
-  height: 150px;
   text-align: center;
   margin: 0 auto;
   color: white;
   display: flex;
   position: fixed;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -477,6 +476,19 @@ button:hover {
   }
   .start-btn {
     margin-bottom: 30px;
+  }
+  .game-area {
+    position: relative;
+    width: 90%;        
+    max-width: 400px;  
+    min-width: 280px;  
+    margin: 0 auto;
+  }
+  .theme-toggle {
+    position: absolute;
+    top: 70px;      
+    right: 15px;     
+    cursor: pointer;
   }
 }
 
