@@ -2,7 +2,7 @@ const letsGoSound = new Audio("assets/sounds/letsgo.mp3");
 document.addEventListener("DOMContentLoaded", function () {
   const letsGoBtn = document.getElementById("start-btn");
   if (letsGoBtn) {
-    // Eğer eleman varsa
+    // If the element exists
     letsGoBtn.addEventListener("click", function () {
       letsGoSound.play();
       runGame();
@@ -10,7 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Element with ID 'start-btn' not found.");
   }
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Load the previously selected theme from local storage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.add(savedTheme); // If a theme was previously selected, apply it
+    toggleIcons(savedTheme); // Adjust icons based on the current theme
+  }
 });
+
+  
 
 //variables
 const startBtn = document.getElementById("start-btn");

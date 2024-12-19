@@ -18,6 +18,16 @@ body {
   margin-right: auto;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
 .game-title {
   background-color: #ff6f00;
   color: white;
@@ -35,7 +45,7 @@ body {
 }
 
 .theme-toggle {
-  margin-left: 430px;
+  margin-left: 400px;
 }
 
 .heading {
