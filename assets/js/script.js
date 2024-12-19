@@ -306,16 +306,22 @@ function generateResultMessage(score, userName) {
   }
 
   // Create result message
+  let resultMessage;
   if (score >= 8) {
-    return `Awesome!! ${userName}. Your score is ${score} out of 10.`;
+    resultMessage = `Awesome!! ${userName}. Your score is ${score} out of 10.`;
   } else if (score >= 6) {
-    return `Well Done! ${userName}. Your score is ${score} out of 10.`;
+    resultMessage = `Well Done! ${userName}. Your score is ${score} out of 10.`;
   } else if (score >= 4) {
-    return `Congratulations! ${userName}. Your score is ${score} out of 10.`;
+    resultMessage = `Congratulations! ${userName}. Your score is ${score} out of 10.`;
   } else {
-    return `Nice Try! ${userName}. Your score is ${score} out of 10.`;
+    resultMessage = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
   }
+
+  resultMessage += `<br>Highest Score: ${highestScore}/10`;
+
+  return resultMessage; 
 }
+
 
 // Hide all elements and show the result
 function endScore() {
