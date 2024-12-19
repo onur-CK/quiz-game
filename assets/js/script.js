@@ -317,7 +317,7 @@ function generateResultMessage(score, userName) {
     resultMessage = `Nice Try! ${userName}. Your score is ${score} out of 10.`;
   }
 
-  resultMessage += `<br>Highest Score: ${highestScore}/10`;
+  resultMessage += `<br><strong style="display:block; margin-top:10px; font-size:16px;">Highest Score: ${highestScore}/10</strong>`;
 
   return resultMessage; 
 }
