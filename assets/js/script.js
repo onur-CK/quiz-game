@@ -34,6 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleIcons("dark-mode"); // Adjust icons for dark mode
     }
   });
+  
+  // Toggles visibility of sun and moon icons based on the current theme
+  function toggleIcons(theme) {
+    const sunIcon = themeToggle.querySelector(".fa-sun");
+    const moonIcon = themeToggle.querySelector(".fa-moon");
+
+    if (theme === "dark-mode") {
+      sunIcon.style.display = "block";  // In dark mode, display the sun icon
+      moonIcon.style.display = "none";  // In dark mode, hide the moon icon
+    } else {
+      sunIcon.style.display = "none";  // In light mode, hide the sun icon
+      moonIcon.style.display = "block"; // In light mode, display the moon icon
+    }
+}
 });
 
 //variables
