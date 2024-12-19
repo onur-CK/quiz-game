@@ -19,9 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add(savedTheme); // If a theme was previously selected, apply it
     toggleIcons(savedTheme); // Adjust icons based on the current theme
   }
-});
 
-  
+  // Theme toggle functionality
+  themeToggle.addEventListener("click", function () {
+    if (body.classList.contains("dark-mode")) {
+      body.classList.remove("dark-mode");
+      body.classList.add("light-mode");
+      localStorage.setItem("theme", "light-mode"); // Save the light mode in local storage
+      toggleIcons("light-mode"); // Adjust icons for light mode
+    } else {
+      body.classList.remove("light-mode");
+      body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark-mode"); // Save the dark mode in local storage
+      toggleIcons("dark-mode"); // Adjust icons for dark mode
+    }
+  });
+});
 
 //variables
 const startBtn = document.getElementById("start-btn");
