@@ -110,7 +110,9 @@ quickzRules.addEventListener("click", showRules);
 
 //function for displaying the rules of the quickz.
 function showRules() {
-  rulesSound.play();
+  if (!isSoundMuted) {
+    rulesSound.play();
+  }
   
   // Hide the questions container
   const questionCont = document.getElementById("questions-container");
