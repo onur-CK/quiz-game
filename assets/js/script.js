@@ -428,7 +428,9 @@ function updateScore(scoreType) {
 
 function timeOutEndOfTheGame() {
   // Mesajı güncelle
-  timeoutSound.play();
+  if (!isSoundMuted) {
+    timeoutSound.play();
+  }
   const questionArea = document.getElementById("questions-area");
   questionArea.innerHTML = `<strong><em>Unfortunately, time is up!</em></strong> <br>`;
 
