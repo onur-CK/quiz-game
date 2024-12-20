@@ -14,15 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
   // Load the previously selected theme from local storage
-  if (!localStorage.getItem("theme")) {
-    body.classList.add("light-mode");
-    localStorage.setItem("theme", "light-mode");
-    toggleIcons("light-mode");
-  } else {
-    // Daha önce seçilmiş theme varsa onu kullan
-    const savedTheme = localStorage.getItem("theme");
-    body.classList.add(savedTheme);
-    toggleIcons(savedTheme);
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.add(savedTheme); // If a theme was previously selected, apply it
+    toggleIcons(savedTheme); // Adjust icons based on the current theme
   }
 
   // Theme toggle functionality
@@ -40,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+  // Sound toggle functionality
+  const soundToggle = document.getElementById("sound-toggle");
+  soundToggle.addEventListener("click", function() {
+    isSoundMuted = !isSoundMuted;
+    soundToggle.innerHTML = isSoundMuted ? 
+      '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>' : 
+      '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
+  });
+});
+
   // Toggles visibility of sun and moon icons based on the current theme
   function toggleIcons(theme) {
     const sunIcon = themeToggle.querySelector(".fa-sun");
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       moonIcon.style.display = "block"; // In light mode, display the moon icon
     }
 }
-});
+
 
 //variables
 const startBtn = document.getElementById("start-btn");
@@ -89,6 +94,7 @@ let score = 0;
 var sec = 30; //time for starting the quiz
 var clicks = 0;
 let time;
+let isSoundMuted = true;
 
 //event listeners for submit, next and rules
 submit.addEventListener("click", function () {
