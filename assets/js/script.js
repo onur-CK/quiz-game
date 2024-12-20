@@ -44,13 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
     isSoundMuted = !isSoundMuted; // Ses durumunu tersine çevir (true ise false, false ise true yap)
     
     if (isSoundMuted) {
-      // Ses kapalıysa
-      soundToggle.innerHTML = '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>';
-      console.log("Sesler kapatıldı"); // Kontrol için
-    } else {
-      // Ses açıksa
       soundToggle.innerHTML = '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
-      console.log("Sesler açıldı"); // Kontrol için
+      console.log("Sesler kapatıldı");
+    } else {
+      soundToggle.innerHTML = '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>';
+      console.log("Sesler açıldı");
     }
   });
 
