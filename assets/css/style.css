@@ -472,6 +472,8 @@ button:hover {
     top: 70px;      
     right: 15px;     
     cursor: pointer;
+    margin: 1px;
+    right: 1px;
   }
   .message-box {
     max-width: 50%;
