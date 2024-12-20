@@ -300,11 +300,15 @@ function checkAnswer(event) {
 
   // Update the score based on the answer
   if (isCorrect) {
-    correctSound.play();
+    if (!isSoundMuted) {
+      correctSound.play();
+    }
     score++;
     incrementCorrectAnswer();
   } else {
-    wrongSound.play();
+    if (!isSoundMuted) {
+      wrongSound.play();
+    }
     incrementWrongAnswer();
   }
 
