@@ -36,16 +36,23 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleIcons("dark-mode"); // Adjust icons for dark mode
     }
   });
+});
   
   // Sound toggle functionality
   const soundToggle = document.getElementById("sound-toggle");
   soundToggle.addEventListener("click", function() {
-    isSoundMuted = !isSoundMuted;
-    soundToggle.innerHTML = isSoundMuted ? 
-      '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>' : 
-      '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
+    isSoundMuted = !isSoundMuted; // Ses durumunu tersine çevir (true ise false, false ise true yap)
+    
+    if (isSoundMuted) {
+      // Ses kapalıysa
+      soundToggle.innerHTML = '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>';
+      console.log("Sesler kapatıldı"); // Kontrol için
+    } else {
+      // Ses açıksa
+      soundToggle.innerHTML = '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
+      console.log("Sesler açıldı"); // Kontrol için
+    }
   });
-});
 
   // Toggles visibility of sun and moon icons based on the current theme
   function toggleIcons(theme) {
