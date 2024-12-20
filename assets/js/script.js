@@ -1,70 +1,69 @@
 const letsGoSound = new Audio("assets/sounds/letsgo.mp3");
+let isSoundMuted = true;
+
+// Theme toggle function - DOMContentLoaded dışında olmalı
+function toggleIcons(theme) {
+  const sunIcon = document.querySelector(".fa-sun");
+  const moonIcon = document.querySelector(".fa-moon");
+
+  if (theme === "dark-mode") {
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+  } else {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Let's Go button
   const letsGoBtn = document.getElementById("start-btn");
   if (letsGoBtn) {
-    // If the element exists
     letsGoBtn.addEventListener("click", function () {
       if (!isSoundMuted) {
         letsGoSound.play();
       }
       runGame();
     });
-  } else {
-    console.error("Element with ID 'start-btn' not found.");
   }
+
+  // Theme toggle
   const themeToggle = document.getElementById("theme-toggle");
   const body = document.body;
 
-  // Load the previously selected theme from local storage
+  // Load saved theme
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
-    body.classList.add(savedTheme); // If a theme was previously selected, apply it
-    toggleIcons(savedTheme); // Adjust icons based on the current theme
+    body.classList.add(savedTheme);
+    toggleIcons(savedTheme);
   }
 
-  // Theme toggle functionality
+  // Theme toggle click event
   themeToggle.addEventListener("click", function () {
     if (body.classList.contains("dark-mode")) {
       body.classList.remove("dark-mode");
       body.classList.add("light-mode");
-      localStorage.setItem("theme", "light-mode"); // Save the light mode in local storage
-      toggleIcons("light-mode"); // Adjust icons for light mode
+      localStorage.setItem("theme", "light-mode");
+      toggleIcons("light-mode");
     } else {
       body.classList.remove("light-mode");
       body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark-mode"); // Save the dark mode in local storage
-      toggleIcons("dark-mode"); // Adjust icons for dark mode
+      localStorage.setItem("theme", "dark-mode");
+      toggleIcons("dark-mode");
+    }
+  });
+
+  // Sound toggle
+  const soundToggle = document.getElementById("sound-toggle");
+  soundToggle.addEventListener("click", function() {
+    isSoundMuted = !isSoundMuted;
+    if (isSoundMuted) {
+      soundToggle.innerHTML = '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
+    } else {
+      soundToggle.innerHTML = '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>';
     }
   });
 });
-  
-  // Sound toggle functionality
-  const soundToggle = document.getElementById("sound-toggle");
-  soundToggle.addEventListener("click", function() {
-    isSoundMuted = !isSoundMuted; // Ses durumunu tersine çevir (true ise false, false ise true yap)
-    
-    if (isSoundMuted) {
-      soundToggle.innerHTML = '<i class="fa-solid fa-volume-high fa-xl" style="color: #000000;"></i>';
-      console.log("Sesler kapatıldı");
-    } else {
-      soundToggle.innerHTML = '<i class="fa-solid fa-volume-xmark fa-xl" style="color: #000000;"></i>';
-      console.log("Sesler açıldı");
-    }
-  });
-
-  // Toggles visibility of sun and moon icons based on the current theme
-  function toggleIcons(theme) {
-    const sunIcon = themeToggle.querySelector(".fa-sun");
-    const moonIcon = themeToggle.querySelector(".fa-moon");
-
-    if (theme === "dark-mode") {
-      sunIcon.style.display = "block";  // In dark mode, display the sun icon
-      moonIcon.style.display = "none";  // In dark mode, hide the moon icon
-    } else {
-      sunIcon.style.display = "none";  // In light mode, hide the sun icon
-      moonIcon.style.display = "block"; // In light mode, display the moon icon
-    }
-}
 
 
 //variables
@@ -101,7 +100,6 @@ let score = 0;
 var sec = 30; //time for starting the quiz
 var clicks = 0;
 let time;
-let isSoundMuted = true;
 
 //event listeners for submit, next and rules
 submit.addEventListener("click", function () {
