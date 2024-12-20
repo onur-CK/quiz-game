@@ -171,6 +171,8 @@ function playerName() {
     return;
   }
 
+  localStorage.setItem("userName", enteredUserName);
+
   // Continue if the username is valid
   const welcomeMessageDiv = document.getElementById("welcome-message");
   const userNameDisplay = document.getElementById("user-name-display");
@@ -183,7 +185,8 @@ function playerName() {
 
   submit.classList.add("hide");
   scoreText.classList.add("hide");
-
+  form.classList.add("hide");
+  
   // Displays "Let's Go" button
   startBtn.classList.remove("hide");
 }
