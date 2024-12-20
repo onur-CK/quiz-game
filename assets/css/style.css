@@ -120,7 +120,7 @@ body.dark-mode #close-btn {
   color: white;
   display: flex;
   position: fixed;
-  top: 35%;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 30%;
@@ -391,9 +391,10 @@ button:hover {
 @media only screen and (max-width: 600px) {
   .userName {
     max-width: 80%;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 15px;
+    font-weight: bold;
   }
   .timer-btn,
   .question-counter-btn {
@@ -413,6 +414,7 @@ button:hover {
     padding: 15px 25px;
     max-width: 140px;
     margin: 0 auto;
+    margin-bottom: 30px;
   }
   .questions-container {
     max-height: 80vh;
@@ -453,7 +455,26 @@ button:hover {
   }
   .input-nav-restart a {
     position: relative;
-    top: -30px;
+    top: 10px;
+  }
+  .heading {
+    font-size: 20px;
+  }
+  .game-area {
+    position: relative;
+    width: 90%;        
+    max-width: 400px;  
+    min-width: 280px;  
+    margin: 0 auto;
+  }
+  .theme-toggle {
+    position: absolute;
+    top: 70px;      
+    right: 15px;     
+    cursor: pointer;
+  }
+  .message-box {
+    max-width: 50%;
   }
 }
 
@@ -484,38 +505,6 @@ button:hover {
 .question-counter-btn span {
   font-size: 1.2rem;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 600px) {
-  .heading {
-    font-size: 20px;
-  }
-  .userName {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .start-btn {
-    margin-bottom: 30px;
-  }
-  .game-area {
-    position: relative;
-    width: 90%;        
-    max-width: 400px;  
-    min-width: 280px;  
-    margin: 0 auto;
-  }
-  .theme-toggle {
-    position: absolute;
-    top: 70px;      
-    right: 15px;     
-    cursor: pointer;
-  }
-  .input-nav-restart a {
-    top: 10px;
-  }
-  .message-box {
-    max-width: 50%;
-  }
 }
 
 @media only screen and (min-width: 601px) {
