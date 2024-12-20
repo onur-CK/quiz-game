@@ -64,8 +64,10 @@ body.dark-mode #close-btn {
 }
 
 .theme-toggle {
-  margin-left: 420px;
+  margin-left: 450px;
   margin-top: 5px;
+  top: -60px;
+  position: relative;
 }
 
 .heading {
@@ -473,9 +475,12 @@ button:hover {
     right: 15px;     
     cursor: pointer;
     margin: 1px;
-    right: 1px;
+    right: 15px;
   }
   .message-box {
+    max-width: 50%;
+  }
+  .game-title {
     max-width: 50%;
   }
 }
