@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (letsGoBtn) {
     // If the element exists
     letsGoBtn.addEventListener("click", function () {
-      letsGoSound.play();
+      if (!isSoundMuted) {
+        letsGoSound.play();
+      }
       runGame();
     });
   } else {
@@ -98,8 +100,10 @@ let isSoundMuted = true;
 
 //event listeners for submit, next and rules
 submit.addEventListener("click", function () {
-  submitSound.play(); // Play submit sound
-  playerName();       
+  if (!isSoundMuted) {
+    submitSound.play();
+  }
+  playerName();      
 });
 nextBtn.addEventListener("click", nextCurrentQuestion);
 quickzRules.addEventListener("click", showRules);
