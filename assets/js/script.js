@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Theme toggle functionality
-  //themeToggle.addEventListener("click", function () {
+  themeToggle.addEventListener("click", function () {
     if (body.classList.contains("dark-mode")) {
       body.classList.remove("dark-mode");
       body.classList.add("light-mode");
