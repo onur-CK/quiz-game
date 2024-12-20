@@ -48,7 +48,7 @@ body.dark-mode #close-btn {
 }
 
 .game-title {
-  background-color: #ff6f00;
+  background-color: #994400;
   color: white;
   text-align: center;
   padding: 15px 20px;
@@ -89,7 +89,6 @@ body.dark-mode #close-btn {
   border-radius: 50px;
   max-width: 500px;
   color: white;
-
 }
 
 .game-area1 {
@@ -103,7 +102,7 @@ body.dark-mode #close-btn {
 }
 
 .message-box {
-  background-color: #ff6f00;
+  background-color: #994400;
   color: #333;
   font-size: 1.5rem;
   font-weight: bold;
@@ -139,7 +138,7 @@ body.dark-mode #close-btn {
 }
 
 .questions-container2 {
-  background-color: #ff6f00;
+  background-color: #994400;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
@@ -252,7 +251,7 @@ body.dark-mode #close-btn {
   padding: 10px;
   border-radius: 10px;
   background-color: #ff6f00;
-  color: red;
+  color: black;
   font-weight: bold;
 }
 
@@ -298,7 +297,7 @@ button:hover {
 }
 
 .correct-scores-btn {
-  background-color: #388e3c;
+  background-color: #1B5E20;
   color: white;
   border: 2px solid #2c6c2a;
 }
@@ -364,7 +363,7 @@ button:hover {
 }
 
 .input-nav-restart a {
-  background-color: #4a90e2;
+  background-color: #4e4be2;
   color: white;
   padding: 10px 20px;
   font-size: 1.2rem;
@@ -379,7 +378,7 @@ button:hover {
 }
 
 .btn.correct {
-  background-color: #388e3c;
+  background-color: #1B5E20;
   color: white;
 }
 
@@ -510,6 +509,12 @@ button:hover {
     top: 70px;      
     right: 15px;     
     cursor: pointer;
+  }
+  .input-nav-restart a {
+    top: 10px;
+  }
+  .message-box {
+    max-width: 50%;
   }
 }
 
