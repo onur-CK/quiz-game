@@ -68,6 +68,7 @@ body.dark-mode #close-btn {
   margin-top: 5px;
   top: -60px;
   position: relative;
+  cursor: pointer;
 }
 
 .heading {

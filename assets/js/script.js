@@ -14,10 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
   // Load the previously selected theme from local storage
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    body.classList.add(savedTheme); // If a theme was previously selected, apply it
-    toggleIcons(savedTheme); // Adjust icons based on the current theme
+  if (!localStorage.getItem("theme")) {
+    body.classList.add("light-mode");
+    localStorage.setItem("theme", "light-mode");
+    toggleIcons("light-mode");
+  } else {
+    // Daha önce seçilmiş theme varsa onu kullan
+    const savedTheme = localStorage.getItem("theme");
+    body.classList.add(savedTheme);
+    toggleIcons(savedTheme);
   }
 
   // Theme toggle functionality
@@ -171,8 +176,6 @@ function playerName() {
     return;
   }
 
-  localStorage.setItem("userName", enteredUserName);
-
   // Continue if the username is valid
   const welcomeMessageDiv = document.getElementById("welcome-message");
   const userNameDisplay = document.getElementById("user-name-display");
@@ -185,8 +188,7 @@ function playerName() {
 
   submit.classList.add("hide");
   scoreText.classList.add("hide");
-  form.classList.add("hide");
-  
+
   // Displays "Let's Go" button
   startBtn.classList.remove("hide");
 }
