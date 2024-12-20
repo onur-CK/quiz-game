@@ -71,6 +71,14 @@ body.dark-mode #close-btn {
   cursor: pointer;
 }
 
+#sound-toggle {
+  margin-right: 410px;
+  margin-top: 5px;
+  top: -75px;
+  position: relative;
+  cursor: pointer;
+}
+
 .heading {
   font-size: 2.5em;
   width: 80%;
@@ -458,7 +466,7 @@ button:hover {
   }
   .input-nav-restart a {
     position: relative;
-    top: 10px;
+    top: -30px;
   }
   .heading {
     font-size: 20px;
@@ -473,11 +481,15 @@ button:hover {
   .theme-toggle {
     position: absolute;
     top: 68px;      
-    right: 15px;     
     cursor: pointer;
-    margin: 1px;
-    right: 20px;
+    right: 25px;
   }
+  #sound-toggle {
+    position: absolute;
+    top: 59px;      
+    left: 20px;     
+    cursor: pointer;
+ }
   .message-box {
     max-width: 50%;
   }
