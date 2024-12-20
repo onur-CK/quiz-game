@@ -128,7 +128,9 @@ function showRules() {
   submit.classList.remove("hide");
   userName.classList.remove("hide");
   closeBtn.addEventListener("click", function () {
-    closeSound.play();
+    if (!isSoundMuted) {
+      closeSound.play();
+    }
     reset();
   });
 }
